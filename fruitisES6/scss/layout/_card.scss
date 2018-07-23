@@ -1,0 +1,222 @@
+.viewfinder {
+  //background: linear-gradient($colorDegradadoAzul, $colorDegradadoAzulFin);
+  background-image: url('/images/jess-watters-505748-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 475px;
+
+  &__photo {
+    background-image: url('/images/9505e9979cf27646de6a871110cde835.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 240px;
+    height: 200px;
+  }
+
+  &__card {
+    position: relative;
+    background-color: $backgroundHeader;
+    height: 367px;
+  }
+
+  &__card-title {
+    display: flex;
+
+    &-titlebox {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-rectangule {
+      height: 42px;
+      width: 5px;
+      margin: 20px 15px 0 0;
+    }
+
+    &-name {
+      padding: 20px 14px 5px 0;
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    &-job {
+      padding: 0 14px 5px 0;
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px 0 10px 10px;
+
+    &-box {
+      margin-left: 10px;
+      border-radius: 22px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__tags {
+    font-family: $fontOpenSans;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5px 20px;
+
+    &-text {
+      width: 36px;
+      height: 18px;
+      font-size: 13px;
+      border-radius: 4px;
+      margin-right: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      padding: 0 5px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 80px;
+    height: 30px;
+
+    &-reset {
+      background-color: $colorBackgroundReset;
+      border-radius: 15px;
+      border: 1px solid $colorTextTagsCard;
+      text-transform: uppercase;
+      font-family: $fontOpenSansRegular;
+      font-size: 12px;
+      color: $colorTextButtonReset;
+      padding: 5px 10px;
+    }
+
+    &-icono {
+      margin-right: 5px;
+      width: 11px;
+      height: 20px;
+    }
+  }
+
+  &.viewfinder--blue {
+    .viewfinder__card-title-rectangule {
+      background-color: $colorBackgroundRectangule;
+    }
+
+    .viewfinder__card-title-name {
+      color: $colorTextTitleName;
+    }
+
+    .viewfinder__card-title-job {
+      color: $colorTextTitleJob;
+    }
+
+    .viewfinder__icons-box {
+      border: 2px solid  $colorBorderIcons;
+      color: $colorBackgroundIcons;
+    }
+
+    .viewfinder__icons--links {
+      color: $colorBackgroundIcons;
+    }
+
+    .viewfinder__tags-text {
+      background-color: $colorBackgroundTags;
+      color: $colorTextTagsCard;
+    }
+  }
+
+  &.viewfinder--red {
+    .viewfinder__card-title-rectangule {
+      background-color: $colorSelectorRedThree;
+    }
+
+    .viewfinder__card-title-name {
+      color: $colorSelectorRedOne;
+    }
+
+    .viewfinder__card-title-job {
+      color: $colorTextTitleJob;
+    }
+
+    .viewfinder__icons-box {
+      border: 2px solid  $colorSelectorRedThree;
+      color: $colorSelectorRedOne;
+    }
+
+    .viewfinder__icons--links {
+      color: $colorSelectorRedOne;
+    }
+
+    .viewfinder__tags-text {
+      background-color: $colorSelectorRedTwo;
+      color: $colorTextTagsCard;
+    }
+  }
+
+  &.viewfinder--grey {
+    .viewfinder__card-title-rectangule {
+      background-color: $colorSelectorGreyThree;
+    }
+
+    .viewfinder__card-title-name {
+      color: $colorSelectorGreyOne;
+    }
+
+    .viewfinder__card-title-job {
+      color: $colorTextTitleJob;
+    }
+
+    .viewfinder__icons-box {
+      border: 2px solid  $colorSelectorGreyThree;
+      color: $colorSelectorGreyOne;
+    }
+
+    .viewfinder__icons--links {
+      color: $colorSelectorGreyOne;
+    }
+
+    .viewfinder__tags-text {
+      background-color: $colorSelectorGreyTwo;
+      color: $colorTextTagsCard;
+    }
+  }
+}
+
+@media all and (min-width: 768px) {
+  .main__2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .main__card {
+    padding: 20px 40px 21px 0;
+    grid-column: 2;
+  }
+
+  .main__form {
+    grid-column-start: 1;
+    grid-row: 1;
+  }
+
+  .viewfinder {
+    height: 100vh;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+}
