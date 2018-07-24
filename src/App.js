@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-class App extends Component {
+import logoCards from './imagenes/logo-awesome-profile-cards.svg';
+import logoAdalab from './imagenes/logo-adalab-80px.png';
+ class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+        <div className="page">
+        <header>
+          <div className="header__logo">
+            <img className="header__logo--image" src={logoCards} alt=""/>
+          </div>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+        <footer className="footer">
+          <p className="footer__copyright">Awesome profile-cards @ 2018</p>
+          <div className="footer__logo">
+            <a title="Adalab" href="http://adalab.es/">
+              <img className="footer__logo--image" src={logoAdalab} alt="Logo de Adalab en el pie de página"/>
+            </a>
+          </div>
+        </footer>
+        </div>
+      );
   }
 }
+
+
 
 export default App;
