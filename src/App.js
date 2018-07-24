@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/main.css';
 import logoCards from './imagenes/logo-awesome-profile-cards.svg';
 import logoAdalab from './imagenes/logo-adalab-80px.png';
- class App extends Component {
+class App extends Component {
   render() {
     return (
         <div className="page">

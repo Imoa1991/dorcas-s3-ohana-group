@@ -1,0 +1,125 @@
+.border{
+  border-bottom: 0.5px solid $colorHrBookmarks;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.dropdown__fill {
+  margin: 10px 20px 25px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown__fill--name {
+  display: flex;
+  align-items: center;
+
+  .dropdown__fill--nameText {
+    margin-left: 10px;
+    font-size: 18px;
+    font-family: $fontOpenSans;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $colorGreySmoke;
+  }
+
+  .dropdown__fill--nameIcon {
+    color: $colorDesignFillShareIcons;
+  }
+}
+
+.fill_form--container {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+.fill__form--labelinput {
+  display: flex;
+  flex-direction: column;
+}
+
+.fill__label--items {
+  margin-bottom: 5px;
+  font-family: $fontOpenSans;
+  font-weight: 400;
+  color: $colorFillLabelText;
+  font-size: 14px;
+}
+
+.fill__input--items {
+  margin-bottom: 20px;
+  line-height: 30px;
+  border: solid 1px $colorFillInputBorder;
+  padding-left: 9px;
+  font-size: 14px;
+}
+
+.fill__input--buttonandminiimg {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+
+  .fill__input--addimgbutton {
+    background-color: $colorFillAddImgButtonBackg;
+    color: $colorFillAddImgButtonText;
+    font-family: $fontOpenSans;
+    font-size: 14px;
+    width: 140px;
+    height: 30px;
+    border-radius: 3px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+  }
+
+  .fill__input--miniimg {
+    height: 30px;
+    width: 30px;
+    border: solid 1px $colorFillInputBorder;
+    margin-left: 20px;
+    background-image: url();
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+.fill__form--abilitieslabelinput {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.fill__ability {
+  margin-bottom: 21px;
+  display: flex;
+  align-items: center;
+}
+
+.abilitiesbutton {
+  border: 1px solid $colorFillSelectAbbilitiesBorder;
+  border-radius: 45px;
+  height: 30px;
+  width: 30px;
+  margin-left: 20px;
+
+  .fa-plus {
+    color: $colorFillSelectAbbilitiesText;
+  }
+
+  .fa-minus {
+    color: $colorFillSelectAbbilitiesText;
+  }
+}
+
+.fill__ability--jshidden {
+  display: none;
+}
+
+.action__hiddenField {
+  display: none;
+}
+
+.skill__hidden--incard {
+  display: none;
+}
