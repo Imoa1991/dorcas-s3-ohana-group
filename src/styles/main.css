@@ -23,7 +23,7 @@
       padding-left: 40px; } }
 
 .viewfinder {
-  background-image: url("/imagenes/hoja.jpg");
+  background-image: url("../imagenes/hoja.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -32,7 +32,7 @@
   align-items: center;
   height: 475px; }
   .viewfinder__photo {
-    background-image: url("./imagenes/florecita.jpg");
+    background-image: url("../imagenes/florecita.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -184,7 +184,7 @@
   margin: 0 auto 0 auto;
   padding-top: 94px; }
   .main__header--logo {
-    background-image: url("./imagenes/logo-awesome-profile-cards.png");
+    background-image: url("/imagenes/logo-awesome-profile-cards.png");
     width: 250px;
     height: 64px; }
 
@@ -251,7 +251,7 @@
     width: 419px;
     padding-top: 50px; }
     .main__header--logo {
-      background-image: url("./imagenes/logo-awesome-profile-cards-tablet.png");
+      background-image: url("/imagenes/logo-awesome-profile-cards-tablet.png");
       width: 419px;
       height: 107px; }
   .main__intro .main__title {

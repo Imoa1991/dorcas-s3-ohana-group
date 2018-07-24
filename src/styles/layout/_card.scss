@@ -1,6 +1,6 @@
 .viewfinder {
   //background: linear-gradient($colorDegradadoAzul, $colorDegradadoAzulFin);
-  background-image: url('/imagenes/hoja.jpg');
+  background-image: url('../imagenes/hoja.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -10,7 +10,7 @@
   height: 475px;
 
   &__photo {
-    background-image: url('./imagenes/florecita.jpg');
+    background-image: url('../imagenes/florecita.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
