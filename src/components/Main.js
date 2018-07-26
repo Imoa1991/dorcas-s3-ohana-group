@@ -4,7 +4,7 @@ import Visor from './Visor';
 class App extends React.Component {
 	render() {
 		return (
-			<main>
+			<main className="main__2">
 				<Visor />
 			</main>
 			);
