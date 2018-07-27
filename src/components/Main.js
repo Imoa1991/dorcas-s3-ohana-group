@@ -6,7 +6,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<main className="main__2">
-					<Form />
+					<Form fontTypes={this.props.fontTypes} />
           <Visor />
 			</main>
 			);

@@ -5,10 +5,12 @@ import Page from './components/Page'
 class App extends Component {
 constructor(props){
   super(props);
+    this.fontTypes = [ 'Ubuntu', 'Comic Sans', 'Montserrat' ];
+
 }
   render() {
     return (
-      <Page />
+      <Page fontTypes={this.fontTypes} />
       );
   }
 }
