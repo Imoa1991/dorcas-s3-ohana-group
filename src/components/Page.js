@@ -9,7 +9,7 @@ class Page extends React.Component {
     return (
       <div className="page">
         <Header logoCards={logoCards} />
-        <Main />
+        <Main tituloRellena={this.props.tituloRellena} />
         <Footer logoAdalab={logoAdalab} />
       </div>
       );

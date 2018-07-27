@@ -8,7 +8,7 @@ class App extends React.Component {
 		return (
       <form className="main__form" action="javascript:void(0);">
 	      <Design />
-				<Fill />
+				<Fill tituloRellena={this.props.tituloRellena} />
 				<Share />
       </form>
 			);

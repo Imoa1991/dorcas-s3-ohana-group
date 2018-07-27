@@ -5,10 +5,11 @@ import Page from './components/Page'
 class App extends Component {
 constructor(props){
   super(props);
+  this.tituloRellena='Rellena';
 }
   render() {
     return (
-      <Page />
+      <Page tituloRellena={this.tituloRellena} />
       );
   }
 }
