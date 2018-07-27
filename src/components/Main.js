@@ -8,6 +8,7 @@ class App extends React.Component {
 			<main className="main__2">
 					<Form />
           <Visor />
+				{/* <section className="card">{this.props.cariDos}</section> */}
 			</main>
 			);
 	}
