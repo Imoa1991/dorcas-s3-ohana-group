@@ -10,7 +10,7 @@ class Page extends React.Component {
       <div className="page">
         <Header logoCards={logoCards} />
         <Main />
-        <Footer logoAdalab={logoAdalab} />
+        <Footer logoAdalab={logoAdalab} copy={this.props.footerCopy} url={this.props.footerUrl}/>
       </div>
       );
   }
