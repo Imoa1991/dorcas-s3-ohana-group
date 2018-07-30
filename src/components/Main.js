@@ -4,10 +4,13 @@ import Visor from './Visor';
 
 class App extends React.Component {
 	render() {
+
 		return (
 			<main className="main__2">
-					<Form fontTypes={this.props.fontTypes} />
-          <Visor />
+
+					<Form tituloRellena={this.props.tituloRellena} titleD = {this.props.titleD}f ontTypes={this.props.fontTypes}/>
+				 <Visor />
+
 			</main>
 			);
 	}

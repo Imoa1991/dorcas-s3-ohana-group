@@ -13,7 +13,7 @@ class Design extends React.Component {
               <div className="">
                 <i className="far fa-object-ungroup dropdown__desing--nameIcon"></i>
               </div>
-              <h2 className="dropdown__desing--nameText">Diseña</h2>
+              <h2 className="dropdown__desing--nameText">{this.props.titleD}</h2>
             </div>
             <span className="arrow">
               <i className="fas fa-angle-up"></i>

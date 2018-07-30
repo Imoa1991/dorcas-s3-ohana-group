@@ -8,14 +8,15 @@ import Footer from './Footer';
 
 
 class Page extends React.Component {
+
   render() {
     return (
       <div className="page">
         <Header logoCards={logoCards} />
-        <Main fontTypes={this.props.fontTypes} />
-        <Footer logoAdalab={logoAdalab} />
+        <Main tituloRellena={this.props.tituloRellena} titleD={this.props.titleD} fontTypes={this.props.fontTypes} />
+        <Footer logoAdalab={logoAdalab} copy={this.props.footerCopy} url={this.props.footerUrl}/>
       </div>
-      );
+    );
   }
 }
 
