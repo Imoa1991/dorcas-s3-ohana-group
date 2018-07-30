@@ -7,7 +7,7 @@ class App extends React.Component {
 
 		return (
 			<main className="main__2">
-					<Form tituloRellena={this.props.tituloRellena} titledesingdos = {this.props.titledesinguno}/>
+					<Form tituloRellena={this.props.tituloRellena} titleD = {this.props.titleD}/>
 				 <Visor />
 			</main>
 			);

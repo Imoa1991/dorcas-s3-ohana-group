@@ -10,7 +10,7 @@ class Page extends React.Component {
     return (
       <div className="page">
         <Header logoCards={logoCards} />
-        <Main tituloRellena={this.props.tituloRellena} titledesinguno = {this.props.titledesing}/>
+        <Main tituloRellena={this.props.tituloRellena} titleD={this.props.titleD} />
         <Footer logoAdalab={logoAdalab} copy={this.props.footerCopy} url={this.props.footerUrl}/>
       </div>
     );
