@@ -5,14 +5,14 @@ import Page from './components/Page'
 class App extends Component {
 constructor(props){
   super(props);
-    this.TitleD = {
+  this.tituloRellena='Rellena';
+  this.TitleD = {
       title: 'Diseña'
     };
-
-
 }
   render() {
     return (
+      <Page tituloRellena={this.tituloRellena} />
       <Page titledesing = {this.TitleD.title} />
       );
   }

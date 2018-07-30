@@ -7,9 +7,8 @@ class App extends React.Component {
 	render() {
 		return (
       <form className="main__form" action="javascript:void(0);">
-	      <Design
-    			titledesingtres = {this.props.titledesingdos}/>
-				<Fill />
+	      <Design titledesingtres = {this.props.titledesingdos}/>
+				<Fill tituloRellena={this.props.tituloRellena} />
 				<Share />
       </form>
 			);
