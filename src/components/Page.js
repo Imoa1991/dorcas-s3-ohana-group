@@ -5,11 +5,12 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 class Page extends React.Component {
+
   render() {
     return (
       <div className="page">
         <Header logoCards={logoCards} />
-        <Main />
+        <Main titledesinguno = {this.props.titledesing} />
         <Footer logoAdalab={logoAdalab} />
       </div>
       );
