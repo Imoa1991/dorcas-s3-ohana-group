@@ -10,11 +10,10 @@ class Page extends React.Component {
     return (
       <div className="page">
         <Header logoCards={logoCards} />
-        <Main tituloRellena={this.props.tituloRellena} />
-        <Main titledesinguno = {this.props.titledesing} />
-        <Footer logoAdalab={logoAdalab} />
+        <Main tituloRellena={this.props.tituloRellena} titledesinguno = {this.props.titledesing}/>
+        <Footer logoAdalab={logoAdalab} copy={this.props.footerCopy} url={this.props.footerUrl}/>
       </div>
-      );
+    );
   }
 }
 
