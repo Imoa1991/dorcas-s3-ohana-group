@@ -6,10 +6,14 @@ class App extends Component {
 constructor(props){
   super(props);
   this.tituloRellena='Rellena';
+  this.TitleD = {
+      title: 'Diseña'
+    };
 }
   render() {
     return (
       <Page tituloRellena={this.tituloRellena} />
+      <Page titledesing = {this.TitleD.title} />
       );
   }
 }
