@@ -3,7 +3,8 @@ import './styles/main.css';
 import Page from './components/Page'
 
 class App extends Component {
-  constructor(props){
+
+constructor(props){
     super(props);
 
 this.temp = this.temp.bind(this);
@@ -13,7 +14,8 @@ this.temp = this.temp.bind(this);
       copyright:'Awesome profile-cards @ 2018',
       adalab:'http://adalab.es/',
       titleD: 'Diseña',
-      tituloRellena: 'Rellena'
+      tituloRellena: 'Rellena',
+      fontTypes: [ 'Ubuntu', 'Comic Sans', 'Montserrat' ]
     };
   }
 
@@ -23,14 +25,16 @@ temp = () => {
     titleD: newTitle
   });
   console.log(this.state.titleD);
+
 }
 
   render() {
 
     return (
+
       <React.Fragment>
       <button className="botonTemporal" onClick={this.temp}>CLICAR AQUÍ PARA EVENTO TEMPORAL</button>
-      <Page tituloRellena={this.state.tituloRellena} titleD={this.state.titleD} footerCopy={this.state.copyright} footerUrl={this.state.adalab}/>
+      <Page tituloRellena={this.state.tituloRellena} titleD={this.state.titleD} footerCopy={this.state.copyright} footerUrl={this.state.adalab} fontTypes={this.state.fontTypes}/>
       </React.Fragment>
     );
   }
