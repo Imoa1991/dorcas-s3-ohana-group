@@ -6,6 +6,9 @@ class App extends Component {
   constructor(props){
     super(props);
 
+this.temp = this.temp.bind(this);
+
+
     this.state = {
       copyright:'Awesome profile-cards @ 2018',
       adalab:'http://adalab.es/',
@@ -13,11 +16,20 @@ class App extends Component {
       tituloRellena: 'Rellena'
     };
   }
-  // this.state = this.state.bind(this)
+
+temp = () => {
+  let newTitle = prompt('¿Cómo quieres llamar el título "Diseña"?');
+  this.setState({
+    titleD: newTitle
+  });
+  console.log(this.state.titleD);
+}
 
   render() {
+
     return (
       <React.Fragment>
+      <button className="botonTemporal" onClick={this.temp}>CLICAR AQUÍ PARA EVENTO TEMPORAL</button>
       <Page tituloRellena={this.state.tituloRellena} titleD={this.state.titleD} footerCopy={this.state.copyright} footerUrl={this.state.adalab}/>
       </React.Fragment>
     );
