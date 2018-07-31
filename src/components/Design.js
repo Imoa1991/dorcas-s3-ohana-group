@@ -2,7 +2,6 @@ import React from 'react';
 
 class Design extends React.Component {
   render() {
-      console.log(this.props.fontTypes);
 
     return (
 
