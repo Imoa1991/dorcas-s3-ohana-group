@@ -26,7 +26,7 @@ class Design extends React.Component {
               <div className="">
                 <div className="dropdown__colors--selectors" action="index.html" method="post">
                   <div className="dropdown__colorsgroups radiosGroup">
-                    <label className="colors-container" for="blue">
+                    <label className="colors-container" htmlFor="blue">
                       <div className="colors__darkCyan colors"></div>
                       <div className="colors__dirtyblue colors"></div>
                       <div className="colors__hospitalGreen colors"></div>
@@ -34,7 +34,7 @@ class Design extends React.Component {
                     <input className="radio radio--blue" id="blue" type="radio" name="palette" value="1" checked/>
                   </div>
                   <div className="dropdown__colorsgroups radiosGroup">
-                    <label className="colors-container" for="red">
+                    <label className="colors-container" htmlFor="red">
                       <div className="colors__darkRed colors"></div>
                       <div className="colors__strongRed colors"></div>
                       <div className="colors__brightRed colors"></div>
@@ -42,7 +42,7 @@ class Design extends React.Component {
                     <input className="radio radio--red" id="red" type="radio" name="palette" value="2"/>
                   </div>
                   <div className="dropdown__colorsgroups radiosGroup">
-                    <label className="colors-container" for="grey">
+                    <label className="colors-container" htmlFor="grey">
                       <div className="colors__darkBlue colors"></div>
                       <div className="colors__lightBlue colors"></div>
                       <div className="colors__brightBlue colors"></div>
@@ -59,17 +59,17 @@ class Design extends React.Component {
               <div className="">
                 <div className="dropdown__fonts--selectors" action="index.html" method="post">
                   <div className="dropdown__fontsgroups radiosGroup">
-                    <label className="fonts ubuntu" for="ubuntu">{this.props.fontTypes[0]}
+                    <label className="fonts ubuntu" htmlFor="ubuntu">{this.props.fontTypes[0]}
                     </label>
                     <input className="radio radio--ubuntu" id="ubuntu" type="radio" name="typography" value="1"/>
                   </div>
                   <div className="dropdown__fontsgroups radiosGroup">
-                    <label className="fonts comic" for="comic">{this.props.fontTypes[1]}
+                    <label className="fonts comic" htmlFor="comic">{this.props.fontTypes[1]}
                     </label>
                     <input className="radio radio--comic" id="comic" type="radio" name="typography" value="2" checked/>
                   </div>
                   <div className="dropdown__fontsgroups radiosGroup">
-                    <label className="fonts montserrat" for="monstserrat">{this.props.fontTypes[2]}
+                    <label className="fonts montserrat" htmlFor="monstserrat">{this.props.fontTypes[2]}
                     </label>
                     <input className="radio radio--montserrat" id="montserrat" type="radio" name="typography" value="3"/>
                   </div>
