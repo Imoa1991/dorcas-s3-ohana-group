@@ -2,7 +2,10 @@ import React from 'react';
 
 class Design extends React.Component {
   render() {
+      console.log(this.props.fontTypes);
+
     return (
+
       <section className="dropdown__first collapsible collapsible--visible">
         <div className="border">
           <div className="dropdown__desing collapsible__label">
@@ -10,7 +13,7 @@ class Design extends React.Component {
               <div className="">
                 <i className="far fa-object-ungroup dropdown__desing--nameIcon"></i>
               </div>
-              <h2 className="dropdown__desing--nameText">{this.props.titledesingtres}</h2>
+              <h2 className="dropdown__desing--nameText">{this.props.titleD}</h2>
             </div>
             <span className="arrow">
               <i className="fas fa-angle-up"></i>
@@ -57,17 +60,17 @@ class Design extends React.Component {
               <div className="">
                 <div className="dropdown__fonts--selectors" action="index.html" method="post">
                   <div className="dropdown__fontsgroups radiosGroup">
-                    <label className="fonts ubuntu" for="ubuntu">Ubuntu
+                    <label className="fonts ubuntu" for="ubuntu">{this.props.fontTypes[0]}
                     </label>
                     <input className="radio radio--ubuntu" id="ubuntu" type="radio" name="typography" value="1"/>
                   </div>
                   <div className="dropdown__fontsgroups radiosGroup">
-                    <label className="fonts comic" for="comic">Comic Sans
+                    <label className="fonts comic" for="comic">{this.props.fontTypes[1]}
                     </label>
                     <input className="radio radio--comic" id="comic" type="radio" name="typography" value="2" checked/>
                   </div>
                   <div className="dropdown__fontsgroups radiosGroup">
-                    <label className="fonts montserrat" for="monstserrat">Montserrat
+                    <label className="fonts montserrat" for="monstserrat">{this.props.fontTypes[2]}
                     </label>
                     <input className="radio radio--montserrat" id="montserrat" type="radio" name="typography" value="3"/>
                   </div>
