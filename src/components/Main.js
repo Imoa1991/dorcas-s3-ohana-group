@@ -2,13 +2,13 @@ import React from 'react';
 import Form from './Form';
 import Visor from './Visor';
 
-class App extends React.Component {
+class Main extends React.Component {
 	render() {
 
 		return (
 			<main className="main__2">
 
-					<Form tituloRellena={this.props.tituloRellena} titleD = {this.props.titleD}f ontTypes={this.props.fontTypes}/>
+					<Form tituloRellena={this.props.tituloRellena} titleD = {this.props.titleD} fontTypes={this.props.fontTypes}/>
 				 <Visor />
 
 			</main>
@@ -16,4 +16,4 @@ class App extends React.Component {
 	}
 }
 
-export default App;
+export default Main;

@@ -5,16 +5,15 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 
-
-
 class Page extends React.Component {
 
   render() {
+    console.log(`Page: ${this.props.fontTypes});
     return (
       <div className="page">
-        <Header logoCards={logoCards} />
-        <Main tituloRellena={this.props.tituloRellena} titleD={this.props.titleD} fontTypes={this.props.fontTypes} />
-        <Footer logoAdalab={logoAdalab} copy={this.props.footerCopy} url={this.props.footerUrl}/>
+      <Header logoCards={logoCards} />
+      <Main tituloRellena={this.props.tituloRellena} titleD={this.props.titleD} fontTypes={this.props.fontTypes} />
+      <Footer logoAdalab={logoAdalab} copy={this.props.footerCopy} url={this.props.footerUrl}/>
       </div>
     );
   }

@@ -4,10 +4,10 @@ import Page from './components/Page'
 
 class App extends Component {
 
-constructor(props){
+  constructor(props){
     super(props);
 
-this.temp = this.temp.bind(this);
+    this.temp = this.temp.bind(this);
 
 
     this.state = {
@@ -19,14 +19,13 @@ this.temp = this.temp.bind(this);
     };
   }
 
-temp = () => {
-  let newTitle = prompt('¿Cómo quieres llamar el título "Diseña"?');
-  this.setState({
-    titleD: newTitle
-  });
-  console.log(this.state.titleD);
-
-}
+  temp = () => {
+    let newTitle = prompt('¿Cómo quieres llamar el título "Diseña"?');
+    this.setState({
+      titleD: newTitle
+    });
+    console.log(this.state.titleD);
+  }
 
   render() {
 
