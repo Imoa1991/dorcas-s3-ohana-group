@@ -8,7 +8,7 @@ import Footer from './Footer';
 class Page extends React.Component {
 
   render() {
-    console.log(`Page: ${this.props.fontTypes});
+
     return (
       <div className="page">
       <Header logoCards={logoCards} />
