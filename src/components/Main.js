@@ -8,7 +8,7 @@ class Main extends React.Component {
 		return (
 			<main className="main__2">
 
-					<Form tituloRellena={this.props.tituloRellena} titleD = {this.props.titleD} fontTypes={this.props.fontTypes}/>
+					<Form tituloRellena={this.props.tituloRellena} titleD = {this.props.titleD} fontTypes={this.props.fontTypes} skills={this.props.skills}/>
 				 <Visor />
 
 			</main>
