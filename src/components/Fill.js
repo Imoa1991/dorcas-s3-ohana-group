@@ -1,17 +1,9 @@
 import React from 'react';
+import Skills from './Skills';
+
+
 
 class Fill extends React.Component {
-
-  createOptions = () => {
-    console.log(this.props.skills);
-    this.props.skills.map(function(item) {
-      return (
-        <option value={item} className="options--skils">{item}</option>
-      );
-    }
-  )
-}
-
 
   render() {
 
@@ -77,15 +69,7 @@ class Fill extends React.Component {
 
                       <div className="fill__form--abilitieslabelinput">
                           <label className="fill__label--items" for="habilidades">Habilidades (máximo 3)</label>
-                          <div className="fill__ability fill__ability--js">
-                              <select className="abilitiesdropdown abilitiesdropdown--js" name="abilities" id="habilidades">
-                                  <createOptions />
-                              </select>
-
-                              <button className="abilitiesbutton abilitiesbutton--plusjs" type="button" name="button">
-                                  <i className="fas fa-plus"></i>
-                              </button>
-                          </div>
+                                  <Skills skills={this.props.skills} />
                       </div>
 
                   </div>
@@ -94,6 +78,8 @@ class Fill extends React.Component {
       </section>
     );
   }
+
+
 }
 
 
