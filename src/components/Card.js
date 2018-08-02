@@ -11,7 +11,7 @@ class Card extends React.Component {
                 <div className="viewfinder__card-title-rectangule"></div>
                 <div className="viewfinder__card-titlebox">
                   <h2 className="viewfinder__card-title-name" id="element-name">Nombre Apellidos</h2>
-                  <h3 className="viewfinder__card-title-job" id="element-job">Front-end developer</h3>
+                  <h3 className="viewfinder__card-title-job" id="element-job">{this.props.job}</h3>
                 </div>
               </div>
               <div className="viewfinder__photo">
