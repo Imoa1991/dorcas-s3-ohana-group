@@ -12,7 +12,7 @@ class Page extends React.Component {
     return (
       <div className="page">
       <Header logoCards={logoCards} />
-      <Main changeName={this.props.changeName} name={this.props.name} tituloRellena={this.props.tituloRellena} titleD={this.props.titleD} fontTypes={this.props.fontTypes} skills={this.props.skills}/>
+      <Main changeName={this.props.changeName} name={this.props.name} changeJob={this.props.changeJob} job={this.props.job} tituloRellena={this.props.tituloRellena} titleD={this.props.titleD} fontTypes={this.props.fontTypes} skills={this.props.skills}/>
       <Footer logoAdalab={logoAdalab} copy={this.props.footerCopy} url={this.props.footerUrl}/>
       </div>
     );

@@ -4,7 +4,7 @@ import Card from './Card';
 class Visor extends React.Component {
   render(){
     return (
-      <Card name={this.props.name} />
+      <Card name={this.props.name} job={this.props.job} />
     );
   }
 }

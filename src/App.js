@@ -14,11 +14,13 @@ class App extends Component {
       tituloRellena: 'Rellena',
       fontTypes: [ 'Ubuntu', 'Comic Sans', 'Montserrat' ],
       habilidades: [],
-      name: "Nombre y Apellido"
+      name: "Nombre y Apellido",
+      job: "Front End Developer"
 
     };
       this.callAbilitiesAPI();
       this.changeName = this.changeName.bind(this);
+      this.changeJob = this.changeJob.bind(this);
   }
 
 
@@ -29,8 +31,12 @@ changeName(e){
   )
 }
 
-
-
+changeJob(e){
+  this.setState({
+    job: e.currentTarget.value
+  }
+  )
+}
 
   callAbilitiesAPI = () => {
     const url = 'https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json';
@@ -59,7 +65,7 @@ changeName(e){
 
       <React.Fragment>
       <button className="botonTemporal" onClick={this.temp}>CLICAR AQUÍ PARA EVENTO TEMPORAL</button>
-      <Page changeName={this.changeName} name={this.state.name} tituloRellena={this.state.tituloRellena} titleD={this.state.titleD} footerCopy={this.state.copyright} footerUrl={this.state.adalab} fontTypes={this.state.fontTypes} skills={this.state.habilidades}/>
+      <Page changeName={this.changeName} changeJob={this.changeJob} name={this.state.name} job={this.state.job} tituloRellena={this.state.tituloRellena} titleD={this.state.titleD} footerCopy={this.state.copyright} footerUrl={this.state.adalab} fontTypes={this.state.fontTypes} skills={this.state.habilidades}/>
 
       </React.Fragment>
     );

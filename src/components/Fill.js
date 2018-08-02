@@ -33,7 +33,7 @@ class Fill extends React.Component {
 
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" for="puesto">Puesto</label>
-                          <input className="fill__input--items fill__input-job" type="text" id="puesto" name="job" placeholder="Ej: Front-end unicorn" data-info="element-job"/>
+                          <input className="fill__input--items fill__input-job" type="text" id="puesto" name="job" placeholder="Ej: Front-end unicorn" data-info="element-job" onChange={this.props.changeJob}/>
                       </div>
 
                       <div className="fill__form--labelinput">
