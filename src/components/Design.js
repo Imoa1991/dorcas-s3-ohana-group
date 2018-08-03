@@ -61,17 +61,17 @@ class Design extends React.Component {
                   <div className="dropdown__fontsgroups radiosGroup">
                     <label className="fonts ubuntu" htmlFor="ubuntu">{this.props.fontTypes[0]}
                     </label>
-                    <input className="radio radio--ubuntu" id="ubuntu" type="radio" name="typography" value="1"/>
+                    <input className="radio radio--ubuntu" id="ubuntu" type="radio" name="typography" value="1" onChange={this.props.changeTipography} defaultChecked={this.props.tipography == 1}/>
                   </div>
                   <div className="dropdown__fontsgroups radiosGroup">
                     <label className="fonts comic" htmlFor="comic">{this.props.fontTypes[1]}
                     </label>
-                    <input className="radio radio--comic" id="comic" type="radio" name="typography" value="2" checked/>
+                    <input className="radio radio--comic" id="comic" type="radio" name="typography" value="2" onChange={this.props.changeTipography} defaultChecked={this.props.tipography == 2}/>
                   </div>
                   <div className="dropdown__fontsgroups radiosGroup">
                     <label className="fonts montserrat" htmlFor="monstserrat">{this.props.fontTypes[2]}
                     </label>
-                    <input className="radio radio--montserrat" id="montserrat" type="radio" name="typography" value="3"/>
+                    <input className="radio radio--montserrat" id="montserrat" type="radio" name="typography" value="3" onChange={this.props.changeTipography} defaultChecked={this.props.tipography == 3}/>
                   </div>
                 </div>
               </div>

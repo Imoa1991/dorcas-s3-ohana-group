@@ -6,7 +6,7 @@ class Card extends React.Component {
   render(){
     return (
         <section className="main__card">
-          <section id="viewfinder-id" className={`viewfinder ${this.props.sectionClass} comic view`}>
+          <section id="viewfinder-id" className={`viewfinder ${this.props.colorClass} ${this.props.styleClass} view`}>
             <div className="viewfinder__card">
               <div className="viewfinder__card-title">
                 <div className="viewfinder__card-title-rectangule"></div>

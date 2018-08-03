@@ -15,9 +15,19 @@ colorVisor(){
   }
   return color;
 }
+tipographyVisor(){
+  let style = 'montserrat';
+  if (this.props.tipography == 1) {
+    style = 'ubuntu';
+  }else if (this.props.tipography == 2){
+    style = 'comic';
+  }
+  return style;
+}
   render(){
     return (
-      <Card name={this.props.name} job={this.props.job} palette={this.props.palette} sectionClass={this.colorVisor()}/>
+      <Card name={this.props.name} job={this.props.job}
+        tipography={this.props.tipography} styleClass={this.tipographyVisor()} palette={this.props.palette} colorClass={this.colorVisor()} />
     );
   }
 }
