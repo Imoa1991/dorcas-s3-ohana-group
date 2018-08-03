@@ -27,17 +27,17 @@ class Fill extends React.Component {
               <div className="fill_form--container collapsible__content">
                   <div id="fill__form--itemscontainer" className="fill__form--itemscontainer" action="index.html" method="post">
                       <div className="fill__form--labelinput">
-                          <label className="fill__label--items" for="nombrecompleto">Nombre completo</label>
+                          <label className="fill__label--items" htmlFor="nombrecompleto">Nombre completo</label>
                           <input className="fill__input--items fill__input-name" type="text" id="nombrecompleto" name="name" placeholder="Ej: Sally Jill" data-info="element-name" onChange={this.props.changeName}    />
                       </div>
 
                       <div className="fill__form--labelinput">
-                          <label className="fill__label--items" for="puesto">Puesto</label>
+                          <label className="fill__label--items" htmlFor="puesto">Puesto</label>
                           <input className="fill__input--items fill__input-job" type="text" id="puesto" name="job" placeholder="Ej: Front-end unicorn" data-info="element-job" onChange={this.props.changeJob}/>
                       </div>
 
                       <div className="fill__form--labelinput">
-                          <label className="fill__label--items" for="imagenperfil">Imagen de perfil</label>
+                          <label className="fill__label--items" htmlFor="imagenperfil">Imagen de perfil</label>
                           <div className="fill__input--buttonandminiimg">
                               <button type="button" className="fill__input--addimgbutton">Añadir imagen</button>
                               <input type="file" name="photo" id="img-selector" className="action__hiddenField fill__input-photo"/>
@@ -47,28 +47,28 @@ class Fill extends React.Component {
                       </div>
 
                       <div className="fill__form--labelinput">
-                          <label className="fill__label--items" for="email">Email</label>
+                          <label className="fill__label--items" htmlFor="email">Email</label>
                           <input className="fill__input--items fill__input-mail" type="email" id="email" name="email" placeholder="Ej: sally-jill@gmail.com" data-donde="element-mail"/>
                       </div>
 
                       <div className="fill__form--labelinput">
-                          <label className="fill__label--items" for="tlf">Teléfono</label>
+                          <label className="fill__label--items" htmlFor="tlf">Teléfono</label>
                           <input className="fill__input--items fill__input-phone" type="tel" id="tlf" name="phone" placeholder="Ej: 555 55 55 55" data-donde="element-phone"/>
                       </div>
 
                       <div className="fill__form--labelinput">
-                          <label className="fill__label--items" for="linkedin">Linkedin</label>
+                          <label className="fill__label--items" htmlFor="linkedin">Linkedin</label>
                           <input className="fill__input--items fill__input-linkedin" type="text" id="linkedin" name="linkedin" placeholder="Ej: sally.jill"
                           data-donde="element-linkedin"/>
                       </div>
 
                       <div className="fill__form--labelinput">
-                          <label className="fill__label--items" for="github">Github</label>
+                          <label className="fill__label--items" htmlFor="github">Github</label>
                           <input className="fill__input--items fill__input-github" type="text" id="github" name="github" placeholder="Ej: sallyjill" data-donde="element-github"/>
                       </div>
 
                       <div className="fill__form--abilitieslabelinput">
-                          <label className="fill__label--items" for="habilidades">Habilidades (máximo 3)</label>
+                          <label className="fill__label--items" htmlFor="habilidades">Habilidades (máximo 3)</label>
                                   <Skills skills={this.props.skills} />
                       </div>
 
