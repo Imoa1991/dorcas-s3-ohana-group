@@ -65,7 +65,7 @@ changeJob(e){
 
       <React.Fragment>
       <button className="botonTemporal" onClick={this.temp}>CLICAR AQUÍ PARA EVENTO TEMPORAL</button>
-      <Page changeName={this.changeName} changeJob={this.changeJob} name={this.state.name} job={this.state.job} tituloRellena={this.state.tituloRellena} titleD={this.state.titleD} footerCopy={this.state.copyright} footerUrl={this.state.adalab} fontTypes={this.state.fontTypes} skills={this.state.habilidades}/>
+      <Page changeName={this.changeName} name={this.state.name}  changeJob={this.changeJob} job={this.state.job} tituloRellena={this.state.tituloRellena} titleD={this.state.titleD} footerCopy={this.state.copyright} footerUrl={this.state.adalab} fontTypes={this.state.fontTypes} skills={this.state.habilidades}/>
 
       </React.Fragment>
     );
