@@ -18,6 +18,7 @@ class Form extends React.Component {
             skillsNumber={this.props.skillsNumber}
             handleSelectSkills={this.props.handleSelectSkills}
 						handleNumberOfSelects={this.props.handleNumberOfSelects}
+						skillsSelected={this.props.skillsSelected}
 			/>
 			<Share />
 			</form>

@@ -16,6 +16,7 @@ class Main extends React.Component {
 		            skillsNumber={this.props.skillsNumber}
             		handleSelectSkills={this.props.handleSelectSkills}
 								handleNumberOfSelects={this.props.handleNumberOfSelects}
+								skillsSelected={this.props.skillsSelected}
 					/>
 				 <Visor skillsSelected={this.props.skillsSelected} />
 

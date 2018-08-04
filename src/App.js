@@ -64,6 +64,12 @@ handleNumberOfSelects = clickedSelected => {
         this.setState({
           skillsNumber: currentNumbber
         })
+        const position = clickedSelected.parentElement.getAttribute('data-buttonNumber');
+        const currentSkillsSelected = this.state.skillsSelected;
+        currentSkillsSelected.splice(position,1);
+          this.setState({
+            skillsSelected: currentSkillsSelected
+          });
       }
     }
 }
