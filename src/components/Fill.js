@@ -28,7 +28,7 @@ class Fill extends React.Component {
                   <div id="fill__form--itemscontainer" className="fill__form--itemscontainer" action="index.html" method="post">
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="nombrecompleto">Nombre completo</label>
-                          <input className="fill__input--items fill__input-name" type="text" id="nombrecompleto" name="name" placeholder="Ej: Sally Jill" data-info="element-name" onChange={this.props.changeName}    />
+                          <input className="fill__input--items fill__input-name" type="text" id="nombrecompleto" name="name" placeholder="Ej: Sally Jill" data-info="element-name" onChange={this.props.changeName}/>
                       </div>
 
                       <div className="fill__form--labelinput">
@@ -40,8 +40,8 @@ class Fill extends React.Component {
                           <label className="fill__label--items" htmlFor="imagenperfil">Imagen de perfil</label>
                           <div className="fill__input--buttonandminiimg">
                               <button type="button" className="fill__input--addimgbutton">Añadir imagen</button>
-                              <input type="file" name="photo" id="img-selector" className="action__hiddenField fill__input-photo"/>
-                              <div className="fill__input--miniimg">
+                              <input type="file" onChange={this.props.handleImage} ref={this.props.fileImageRef} name="photo" id="img-selector" className="fill__input-photo"/>
+                              <div className="fill__input--miniimg" style= {{backgroundImage: this.props.imageUrl}}>
                               </div>
                           </div>
                       </div>

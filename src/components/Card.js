@@ -15,7 +15,7 @@ class Card extends React.Component {
                   <h3 className="viewfinder__card-title-job" id="element-job">{this.props.job}</h3>
                 </div>
               </div>
-              <div className="viewfinder__photo">
+              <div className="viewfinder__photo" style={{backgroundImage: this.props.imageUrl}} >
               </div>
               <div className="viewfinder__icons">
                 <div className="viewfinder__icons-box mobileicon">

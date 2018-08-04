@@ -27,7 +27,7 @@ tipographyVisor(){
   render(){
     return (
       <Card name={this.props.name} job={this.props.job}
-        tipography={this.props.tipography} styleClass={this.tipographyVisor()} palette={this.props.palette} colorClass={this.colorVisor()} />
+        tipography={this.props.tipography} styleClass={this.tipographyVisor()} palette={this.props.palette} colorClass={this.colorVisor()} imageUrl={this.props.imageUrl} />
     );
   }
 }
