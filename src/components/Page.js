@@ -12,7 +12,15 @@ class Page extends React.Component {
     return (
       <div className="page">
       <Header logoCards={logoCards} />
-      <Main tituloRellena={this.props.tituloRellena} titleD={this.props.titleD} fontTypes={this.props.fontTypes} skills={this.props.skills}/>
+      <Main
+            tituloRellena={this.props.tituloRellena}
+            titleD={this.props.titleD}
+            fontTypes={this.props.fontTypes}
+            skillsList={this.props.skillsList}
+            skillsNumber={this.props.skillsNumber}
+            handleSelectSkills={this.props.handleSelectSkills}
+            handleNumberOfSelects={this.props.handleNumberOfSelects}
+      />
       <Footer logoAdalab={logoAdalab} copy={this.props.footerCopy} url={this.props.footerUrl}/>
       </div>
     );

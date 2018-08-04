@@ -8,8 +8,17 @@ class Form extends React.Component {
 
 		return (
 			<form className="main__form" action="javascript:void(0);">
-			<Design titleD = {this.props.titleD} fontTypes={this.props.fontTypes}/>
-			<Fill tituloRellena={this.props.tituloRellena} skills={this.props.skills}/>
+			<Design
+						titleD = {this.props.titleD}
+						fontTypes={this.props.fontTypes}
+			/>
+			<Fill
+						tituloRellena={this.props.tituloRellena}
+						skillsList={this.props.skillsList}
+            skillsNumber={this.props.skillsNumber}
+            handleSelectSkills={this.props.handleSelectSkills}
+						handleNumberOfSelects={this.props.handleNumberOfSelects}
+			/>
 			<Share />
 			</form>
 		);

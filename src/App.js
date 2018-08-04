@@ -13,7 +13,9 @@ class App extends Component {
       titleD: 'Diseña',
       tituloRellena: 'Rellena',
       fontTypes: [ 'Ubuntu', 'Comic Sans', 'Montserrat' ],
-      habilidades: []
+      skillsList: [],
+      skillsNumber: 2,
+      skillsSelected: [],
     };
       this.callAbilitiesAPI();
   }
@@ -25,11 +27,10 @@ class App extends Component {
     .then(json => {
       console.log(json.skills);
       this.setState({
-        habilidades: json.skills
+        skillsList: json.skills
       });
     });
   };
-
 
   temp = () => {
     let newTitle = prompt('¿Cómo quieres llamar el título "Diseña"?');
@@ -39,13 +40,38 @@ class App extends Component {
     console.log(this.state.titleD);
   }
 
+handleSelectSkills = newSkill => {
+    alert('Skill selected');
+    this.setState({
+      skillsSelected: [...this.state.skillsSelected, newSkill]
+    });
+}
+
+handleNumberOfSelects = clickedSelected => {
+  let currentNumbber = this.state.skillsNumber;
+  currentNumbber += 1;
+  this.setState({
+    skillsNumber: currentNumbber
+  })
+}
+
   render() {
 
     return (
 
       <React.Fragment>
       <button className="botonTemporal" onClick={this.temp}>CLICAR AQUÍ PARA EVENTO TEMPORAL</button>
-      <Page tituloRellena={this.state.tituloRellena} titleD={this.state.titleD} footerCopy={this.state.copyright} footerUrl={this.state.adalab} fontTypes={this.state.fontTypes} skills={this.state.habilidades}/>
+      <Page
+          tituloRellena={this.state.tituloRellena}
+          titleD={this.state.titleD}
+          footerCopy={this.state.copyright}
+          footerUrl={this.state.adalab}
+          fontTypes={this.state.fontTypes}
+          skillsList={this.state.skillsList}
+          skillsNumber={this.state.skillsNumber}
+          handleSelectSkills={this.handleSelectSkills}
+          handleNumberOfSelects={this.handleNumberOfSelects}
+      />
 
       </React.Fragment>
     );
