@@ -31,7 +31,7 @@ class Design extends React.Component {
                       <div className="colors__dirtyblue colors"></div>
                       <div className="colors__hospitalGreen colors"></div>
                     </label>
-                    <input className="radio radio--blue" id="blue" type="radio" name="palette" value="1" checked/>
+                    <input className="radio radio--blue" id="blue" type="radio" name="palette" value="1" onChange={this.props.changePalette} defaultChecked={this.props.palette == 1} />
                   </div>
                   <div className="dropdown__colorsgroups radiosGroup">
                     <label className="colors-container" htmlFor="red">
@@ -39,7 +39,7 @@ class Design extends React.Component {
                       <div className="colors__strongRed colors"></div>
                       <div className="colors__brightRed colors"></div>
                     </label>
-                    <input className="radio radio--red" id="red" type="radio" name="palette" value="2"/>
+                    <input className="radio radio--red" id="red" type="radio" name="palette" value="2" onChange={this.props.changePalette} defaultChecked={this.props.palette == 2} />
                   </div>
                   <div className="dropdown__colorsgroups radiosGroup">
                     <label className="colors-container" htmlFor="grey">
@@ -47,7 +47,7 @@ class Design extends React.Component {
                       <div className="colors__lightBlue colors"></div>
                       <div className="colors__brightBlue colors"></div>
                     </label>
-                    <input className="radio radio--grey" id="grey" type="radio" name="palette" value="3"/>
+                    <input className="radio radio--grey" id="grey" type="radio" name="palette" value="3" onChange={this.props.changePalette} defaultChecked={this.props.palette == 3} />
                   </div>
                 </div>
               </div>
@@ -61,17 +61,17 @@ class Design extends React.Component {
                   <div className="dropdown__fontsgroups radiosGroup">
                     <label className="fonts ubuntu" htmlFor="ubuntu">{this.props.fontTypes[0]}
                     </label>
-                    <input className="radio radio--ubuntu" id="ubuntu" type="radio" name="typography" value="1"/>
+                    <input className="radio radio--ubuntu" id="ubuntu" type="radio" name="typography" value="1" onChange={this.props.changeTipography} defaultChecked={this.props.tipography == 1}/>
                   </div>
                   <div className="dropdown__fontsgroups radiosGroup">
                     <label className="fonts comic" htmlFor="comic">{this.props.fontTypes[1]}
                     </label>
-                    <input className="radio radio--comic" id="comic" type="radio" name="typography" value="2" checked/>
+                    <input className="radio radio--comic" id="comic" type="radio" name="typography" value="2" onChange={this.props.changeTipography} defaultChecked={this.props.tipography == 2}/>
                   </div>
                   <div className="dropdown__fontsgroups radiosGroup">
                     <label className="fonts montserrat" htmlFor="monstserrat">{this.props.fontTypes[2]}
                     </label>
-                    <input className="radio radio--montserrat" id="montserrat" type="radio" name="typography" value="3"/>
+                    <input className="radio radio--montserrat" id="montserrat" type="radio" name="typography" value="3" onChange={this.props.changeTipography} defaultChecked={this.props.tipography == 3}/>
                   </div>
                 </div>
               </div>
