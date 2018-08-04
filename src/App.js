@@ -84,6 +84,7 @@ handleNumberOfSelects = clickedSelected => {
           skillsNumber={this.state.skillsNumber}
           handleSelectSkills={this.handleSelectSkills}
           handleNumberOfSelects={this.handleNumberOfSelects}
+          skillsSelected={this.state.skillsSelected}
       />
 
       </React.Fragment>

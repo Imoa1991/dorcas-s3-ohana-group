@@ -20,6 +20,7 @@ class Page extends React.Component {
             skillsNumber={this.props.skillsNumber}
             handleSelectSkills={this.props.handleSelectSkills}
             handleNumberOfSelects={this.props.handleNumberOfSelects}
+            skillsSelected={this.props.skillsSelected}
       />
       <Footer logoAdalab={logoAdalab} copy={this.props.footerCopy} url={this.props.footerUrl}/>
       </div>

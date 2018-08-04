@@ -4,7 +4,7 @@ import Card from './Card';
 class Visor extends React.Component {
   render(){
     return (
-      <Card />
+      <Card skillsSelected={this.props.skillsSelected} />
     );
   }
 }

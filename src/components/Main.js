@@ -17,7 +17,7 @@ class Main extends React.Component {
             		handleSelectSkills={this.props.handleSelectSkills}
 								handleNumberOfSelects={this.props.handleNumberOfSelects}
 					/>
-				 <Visor />
+				 <Visor skillsSelected={this.props.skillsSelected} />
 
 			</main>
 			);
