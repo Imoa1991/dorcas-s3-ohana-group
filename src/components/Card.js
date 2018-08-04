@@ -7,13 +7,13 @@ class Card extends React.Component {
 
     return (
         <section className="main__card">
-          <section id="viewfinder-id" className="viewfinder viewfinder--blue comic view">
+          <section id="viewfinder-id" className={`viewfinder ${this.props.colorClass} ${this.props.styleClass} view`}>
             <div className="viewfinder__card">
               <div className="viewfinder__card-title">
                 <div className="viewfinder__card-title-rectangule"></div>
                 <div className="viewfinder__card-titlebox">
-                  <h2 className="viewfinder__card-title-name" id="element-name">Nombre Apellidos</h2>
-                  <h3 className="viewfinder__card-title-job" id="element-job">Front-end developer</h3>
+                  <h2 className="viewfinder__card-title-name" id="element-name">{this.props.name}</h2>
+                  <h3 className="viewfinder__card-title-job" id="element-job">{this.props.job}</h3>
                 </div>
               </div>
               <div className="viewfinder__photo">

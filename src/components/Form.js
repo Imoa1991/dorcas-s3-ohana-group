@@ -11,8 +11,16 @@ class Form extends React.Component {
 			<Design
 						titleD = {this.props.titleD}
 						fontTypes={this.props.fontTypes}
+						palette={this.props.palette}
+						changePalette={this.props.changePalette}
+						tipography={this.props.tipography}
+						changeTipography={this.props.changeTipography}
 			/>
 			<Fill
+						changeName={this.props.changeName}
+						name={this.props.name}
+						changeJob={this.props.changeJob}
+						job={this.props.job}
 						tituloRellena={this.props.tituloRellena}
 						skillsList={this.props.skillsList}
             skillsNumber={this.props.skillsNumber}
