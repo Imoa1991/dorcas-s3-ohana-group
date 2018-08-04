@@ -5,15 +5,16 @@ import Skills from './Skills';
 
 class Fill extends React.Component {
 
-
   generateSelectTags = () => {
     let selectTags = [];
+    const signals = ["fas fa-plus","fas fa-minus","fas fa-minus"];
 
     for (var num = 0; num < this.props.skillsNumber; num++) {
       selectTags.push(<Skills
             skillsList={this.props.skillsList}
             handleSelectSkills={this.props.handleSelectSkills}
             handleNumberOfSelects={this.props.handleNumberOfSelects}
+            PlusOrMinus={signals[num]}
         />);
         console.log(this.props.skillsNumber);
         console.log(selectTags);

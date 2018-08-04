@@ -23,7 +23,7 @@ addOrRemoveSelect = event => {
           </select>
 
           <button className="abilitiesbutton abilitiesbutton--plusjs" type="button" name="button" onClick={this.addOrRemoveSelect}>
-                <i className="fas fa-plus"></i>
+                <i className={this.props.PlusOrMinus}></i>
           </button>
       </div>
     );

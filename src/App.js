@@ -51,8 +51,6 @@ handleNumberOfSelects = clickedSelected => {
   console.log(clickedSelected);
   if (clickedSelected.classList.contains('fa-plus')) {
     if (this.state.skillsNumber < 3) {
-        clickedSelected.classList.remove('fa-plus');
-        clickedSelected.classList.add('fa-minus');
         let currentNumbber = this.state.skillsNumber;
         currentNumbber += 1;
         this.setState({
