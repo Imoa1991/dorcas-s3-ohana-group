@@ -7,7 +7,7 @@ handleSelect = event => {
 }
 
 addOrRemoveSelect = event => {
-  this.props.handleNumberOfSelects();
+  this.props.handleNumberOfSelects(event.currentTarget.firstChild);
 }
 
   render () {
