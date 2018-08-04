@@ -2,9 +2,9 @@ import React from 'react';
 import Reset from './Reset';
 
 class Card extends React.Component {
+
   render(){
 
-    console.log(this.props.skillsSelected);
     return (
         <section className="main__card">
           <section id="viewfinder-id" className="viewfinder viewfinder--blue comic view">

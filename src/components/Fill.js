@@ -15,9 +15,8 @@ class Fill extends React.Component {
             handleSelectSkills={this.props.handleSelectSkills}
             handleNumberOfSelects={this.props.handleNumberOfSelects}
             PlusOrMinus={signals[num]}
+            dataSelectNumber={num}
         />);
-        console.log(this.props.skillsNumber);
-        console.log(selectTags);
       }
               return selectTags;
     }

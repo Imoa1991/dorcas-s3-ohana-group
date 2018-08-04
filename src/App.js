@@ -25,7 +25,6 @@ class App extends Component {
     fetch(url)
     .then(response => response.json())
     .then(json => {
-      console.log(json.skills);
       this.setState({
         skillsList: json.skills
       });
@@ -40,10 +39,11 @@ class App extends Component {
     console.log(this.state.titleD);
   }
 
-handleSelectSkills = newSkill => {
-    alert('Skill selected');
+handleSelectSkills = (newSkill,position) => {
+  const currentSkillsSelected = this.state.skillsSelected;
+  currentSkillsSelected.splice(position,1,newSkill);
     this.setState({
-      skillsSelected: [...this.state.skillsSelected, newSkill]
+      skillsSelected: currentSkillsSelected
     });
 }
 

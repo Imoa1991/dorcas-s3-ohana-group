@@ -3,7 +3,7 @@ import React from 'react'
 class Skills extends React.Component {
 
 handleSelect = event => {
-  this.props.handleSelectSkills(event.currentTarget.value);
+  this.props.handleSelectSkills(event.currentTarget.value,event.currentTarget.getAttribute('data-selectNumber'));
 }
 
 addOrRemoveSelect = event => {
@@ -14,7 +14,7 @@ addOrRemoveSelect = event => {
 
     return (
       <div className="fill__ability fill__ability--js">
-          <select className="abilitiesdropdown abilitiesdropdown--js" name="abilities" id="habilidades" onChange={this.handleSelect}>
+          <select className="abilitiesdropdown abilitiesdropdown--js" name="abilities" id="habilidades" onChange={this.handleSelect} data-selectNumber={this.props.dataSelectNumber}>
                 {this.props.skillsList.map(function(item) {
                   return (
                     <option value={item} className="options--skils">{item}</option>
