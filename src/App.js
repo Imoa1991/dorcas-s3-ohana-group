@@ -91,7 +91,14 @@ handleNumberOfSelects = clickedSelected => {
 }
 
 resetCard = () => {
-  alert('hello');
+  this.setState({
+    name: "Nombre y Apellido",
+      job: "Front End Developer",
+      palette:1,
+      tipography: 1,
+      skillsNumber: 1,
+      skillsSelected: [],
+  })
 }
 
   render() {
