@@ -6,13 +6,7 @@ class App extends Component {
 
   constructor(props){
     super(props);
-    this.temp = this.temp.bind(this);
     this.state = {
-      copyright:'Awesome profile-cards @ 2018',
-      adalab:'http://adalab.es/',
-      titleD: 'Diseña',
-      tituloRellena: 'Rellena',
-      fontTypes: [ 'Ubuntu', 'Comic Sans', 'Montserrat' ],
       name: "Nombre y Apellido",
       job: "Front End Developer",
       palette:1,
@@ -60,12 +54,6 @@ changeTipography(e){
     });
   };
 
-  temp = () => {
-    let newTitle = prompt('¿Cómo quieres llamar el título "Diseña"?');
-    this.setState({
-      titleD: newTitle
-    });
-  }
 
 handleSelectSkills = (newSkill,position) => {
   const currentSkillsSelected = this.state.skillsSelected;
@@ -106,7 +94,6 @@ handleNumberOfSelects = clickedSelected => {
 
     return (
       <React.Fragment>
-      <button className="botonTemporal" onClick={this.temp}>CLICAR AQUÍ PARA EVENTO TEMPORAL</button>
       <Page
           changeName={this.changeName}
           name={this.state.name}
@@ -116,11 +103,6 @@ handleNumberOfSelects = clickedSelected => {
           changePalette={this.changePalette}
           tipography={this.state.tipography}
           changeTipography={this.changeTipography}
-          tituloRellena={this.state.tituloRellena}
-          titleD={this.state.titleD}
-          footerCopy={this.state.copyright}
-          footerUrl={this.state.adalab}
-          fontTypes={this.state.fontTypes}
           skillsList={this.state.skillsList}
           skillsNumber={this.state.skillsNumber}
           handleSelectSkills={this.handleSelectSkills}

@@ -12,7 +12,7 @@ class Design extends React.Component {
               <div className="">
                 <i className="far fa-object-ungroup dropdown__desing--nameIcon"></i>
               </div>
-              <h2 className="dropdown__desing--nameText">{this.props.titleD}</h2>
+              <h2 className="dropdown__desing--nameText">Diseña</h2>
             </div>
             <span className="arrow">
               <i className="fas fa-angle-up"></i>
@@ -59,18 +59,15 @@ class Design extends React.Component {
               <div className="">
                 <div className="dropdown__fonts--selectors" action="index.html" method="post">
                   <div className="dropdown__fontsgroups radiosGroup">
-                    <label className="fonts ubuntu" htmlFor="ubuntu">{this.props.fontTypes[0]}
-                    </label>
+                    <label className="fonts ubuntu" htmlFor="ubuntu">Ubuntu</label>
                     <input className="radio radio--ubuntu" id="ubuntu" type="radio" name="typography" value="1" onChange={this.props.changeTipography} defaultChecked={this.props.tipography == 1}/>
                   </div>
                   <div className="dropdown__fontsgroups radiosGroup">
-                    <label className="fonts comic" htmlFor="comic">{this.props.fontTypes[1]}
-                    </label>
+                    <label className="fonts comic" htmlFor="comic">Comic Sans</label>
                     <input className="radio radio--comic" id="comic" type="radio" name="typography" value="2" onChange={this.props.changeTipography} defaultChecked={this.props.tipography == 2}/>
                   </div>
                   <div className="dropdown__fontsgroups radiosGroup">
-                    <label className="fonts montserrat" htmlFor="monstserrat">{this.props.fontTypes[2]}
-                    </label>
+                    <label className="fonts montserrat" htmlFor="monstserrat">Montserrat</label>
                     <input className="radio radio--montserrat" id="montserrat" type="radio" name="typography" value="3" onChange={this.props.changeTipography} defaultChecked={this.props.tipography == 3}/>
                   </div>
                 </div>
