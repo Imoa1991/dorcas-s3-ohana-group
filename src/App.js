@@ -14,7 +14,7 @@ class App extends Component {
       job: "Front End Developer",
       palette:1,
       tipography: 1,
-      imageUrl: `url("https://i.imgur.com/EGpLjJ2.jpg")`
+      imageUrl: `url("https://i.imgur.com/EGpLjJ2.jpg")`,
       skillsList: [],
       skillsNumber: 1,
       skillsSelected: [],
@@ -131,8 +131,8 @@ handleNumberOfSelects = clickedSelected => {
           handleSelectSkills={this.handleSelectSkills}
           handleNumberOfSelects={this.handleNumberOfSelects}
           skillsSelected={this.state.skillsSelected}
-          fileImageRef={this.fileInput} 
-          handleImage={this.handleImage} 
+          fileImageRef={this.fileInput}
+          handleImage={this.handleImage}
           imageUrl={this.state.imageUrl}
       />
       </React.Fragment>
