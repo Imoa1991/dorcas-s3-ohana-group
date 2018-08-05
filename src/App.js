@@ -2,15 +2,19 @@ import React, { Component } from 'react';
 import './styles/main.css';
 import Page from './components/Page'
 
+const fr = new FileReader();
+
 class App extends Component {
 
   constructor(props){
     super(props);
+    this.fileInput = React.createRef();
     this.state = {
       name: "Nombre y Apellido",
       job: "Front End Developer",
       palette:1,
       tipography: 1,
+      imageUrl: `url("https://i.imgur.com/EGpLjJ2.jpg")`,
       skillsList: [],
       skillsNumber: 1,
       skillsSelected: [],
@@ -20,6 +24,8 @@ class App extends Component {
       this.changeJob = this.changeJob.bind(this);
       this.changePalette = this.changePalette.bind(this);
       this.changeTipography = this.changeTipography.bind(this);
+      this.writeImages = this.writeImages.bind(this);
+      this.handleImage = this.handleImage.bind(this);
   }
 
 changeName(e){
@@ -43,6 +49,23 @@ changeTipography(e){
     tipography: e.currentTarget.value
   })
 };
+
+handleImage(event) {
+    const imageuser = this.fileInput.current.files[0];
+    fr.addEventListener('load', this.writeImages);
+    fr.readAsDataURL(imageuser);
+ }
+
+writeImages(){
+  console.log(fr.result)
+    this.setState({
+    imageUrl: `url("${fr.result}")`
+ });
+}
+
+
+
+
   callAbilitiesAPI = () => {
     const url = 'https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json';
     fetch(url)
@@ -108,8 +131,10 @@ handleNumberOfSelects = clickedSelected => {
           handleSelectSkills={this.handleSelectSkills}
           handleNumberOfSelects={this.handleNumberOfSelects}
           skillsSelected={this.state.skillsSelected}
+          fileImageRef={this.fileInput}
+          handleImage={this.handleImage}
+          imageUrl={this.state.imageUrl}
       />
-
       </React.Fragment>
     );
   }

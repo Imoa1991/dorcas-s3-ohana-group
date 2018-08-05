@@ -7,7 +7,6 @@ class Main extends React.Component {
 
 		return (
 			<main className="main__2">
-
 					<Form
 								changeName={this.props.changeName}
 								name={this.props.name}
@@ -22,6 +21,9 @@ class Main extends React.Component {
             		handleSelectSkills={this.props.handleSelectSkills}
 								handleNumberOfSelects={this.props.handleNumberOfSelects}
 								skillsSelected={this.props.skillsSelected}
+                fileImageRef={this.props.fileImageRef}  
+                handleImage={this.props.handleImage} 
+                imageUrl={this.props.imageUrl} 
 					/>
 				 <Visor
 								name={this.props.name}
@@ -29,8 +31,8 @@ class Main extends React.Component {
 							 	palette={this.props.palette}
 							 	tipography={this.props.tipography}
 							 	skillsSelected={this.props.skillsSelected}
+                imageUrl={this.props.imageUrl}
 				 />
-
 			</main>
 			);
 	}
