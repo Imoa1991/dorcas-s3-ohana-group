@@ -33,7 +33,7 @@ class Fill extends React.Component {
                       <div className="">
                           <i className="far fa-keyboard dropdown__fill--nameIcon"></i>
                       </div>
-                      <h2 className="dropdown__fill--nameText">{this.props.tituloRellena}</h2>
+                      <h2 className="dropdown__fill--nameText">Rellena</h2>
                   </div>
 
                   <span className="arrow">

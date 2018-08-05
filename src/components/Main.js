@@ -17,9 +17,6 @@ class Main extends React.Component {
 								changePalette={this.props.changePalette}
 								tipography={this.props.tipography}
 								changeTipography={this.props.changeTipography}
-								tituloRellena={this.props.tituloRellena}
-								titleD = {this.props.titleD}
-								fontTypes={this.props.fontTypes}
 								skillsList={this.props.skillsList}
 		            skillsNumber={this.props.skillsNumber}
             		handleSelectSkills={this.props.handleSelectSkills}
