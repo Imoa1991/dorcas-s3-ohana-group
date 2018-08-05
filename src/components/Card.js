@@ -4,6 +4,7 @@ import Reset from './Reset';
 class Card extends React.Component {
 
   render(){
+
     return (
         <section className="main__card">
           <section id="viewfinder-id" className={`viewfinder ${this.props.colorClass} ${this.props.styleClass} view`}>
@@ -40,15 +41,16 @@ class Card extends React.Component {
                 </div>
               </div>
               <div className="viewfinder__tags">
-                <div className="viewfinder__tags-text">
-                  <p className="skilltext"></p>
-                </div>
-                <div className="viewfinder__tags-text">
-                  <p className="skilltext"></p>
-                </div>
-                <div className="viewfinder__tags-text">
-                  <p className="skilltext"></p>
-                </div>
+                  {this.props.skillsSelected.map(skill => {
+
+                  return (
+                    <div className="viewfinder__tags-text">
+                      <p className="skilltext">{skill}</p>
+                    </div>
+                  )
+                  })
+                  }
+
               </div>
                 <Reset />
             </div>
