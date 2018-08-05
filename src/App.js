@@ -13,11 +13,13 @@ class App extends Component {
       titleD: 'Diseña',
       tituloRellena: 'Rellena',
       fontTypes: [ 'Ubuntu', 'Comic Sans', 'Montserrat' ],
-      habilidades: [],
       name: "Nombre y Apellido",
       job: "Front End Developer",
       palette:1,
-      tipography: 1
+      tipography: 1,
+      skillsList: [],
+      skillsNumber: 1,
+      skillsSelected: [],
     };
       this.callAbilitiesAPI();
       this.changeName = this.changeName.bind(this);
@@ -52,9 +54,8 @@ changeTipography(e){
     fetch(url)
     .then(response => response.json())
     .then(json => {
-      console.log(json.skills);
       this.setState({
-        habilidades: json.skills
+        skillsList: json.skills
       });
     });
   };
@@ -66,12 +67,67 @@ changeTipography(e){
     });
   }
 
+handleSelectSkills = (newSkill,position) => {
+  const currentSkillsSelected = this.state.skillsSelected;
+  currentSkillsSelected.splice(position,1,newSkill);
+    this.setState({
+      skillsSelected: currentSkillsSelected
+    });
+}
+
+handleNumberOfSelects = clickedSelected => {
+  console.log(clickedSelected);
+  if (clickedSelected.classList.contains('fa-plus')) {
+    if (this.state.skillsNumber < 3) {
+        let currentNumbber = this.state.skillsNumber;
+        currentNumbber += 1;
+        this.setState({
+          skillsNumber: currentNumbber
+        })
+    }
+  } else {
+      if (this.state.skillsNumber > 1) {
+        let currentNumbber = this.state.skillsNumber;
+        currentNumbber -= 1;
+        this.setState({
+          skillsNumber: currentNumbber
+        })
+        const position = clickedSelected.parentElement.getAttribute('data-buttonNumber');
+        const currentSkillsSelected = this.state.skillsSelected;
+        currentSkillsSelected.splice(position,1);
+          this.setState({
+            skillsSelected: currentSkillsSelected
+          });
+      }
+    }
+}
+
   render() {
 
     return (
       <React.Fragment>
-        <button className="botonTemporal" onClick={this.temp}>CLICAR AQUÍ PARA EVENTO TEMPORAL</button>
-        <Page changeName={this.changeName} name={this.state.name}  changeJob={this.changeJob} job={this.state.job}  tituloRellena={this.state.tituloRellena} titleD={this.state.titleD} footerCopy={this.state.copyright} footerUrl={this.state.adalab} fontTypes={this.state.fontTypes} skills={this.state.habilidades} palette={this.state.palette} changePalette={this.changePalette} tipography={this.state.tipography} changeTipography={this.changeTipography} />
+      <button className="botonTemporal" onClick={this.temp}>CLICAR AQUÍ PARA EVENTO TEMPORAL</button>
+      <Page
+          changeName={this.changeName}
+          name={this.state.name}
+          changeJob={this.changeJob}
+          job={this.state.job}
+          palette={this.state.palette}
+          changePalette={this.changePalette}
+          tipography={this.state.tipography}
+          changeTipography={this.changeTipography}
+          tituloRellena={this.state.tituloRellena}
+          titleD={this.state.titleD}
+          footerCopy={this.state.copyright}
+          footerUrl={this.state.adalab}
+          fontTypes={this.state.fontTypes}
+          skillsList={this.state.skillsList}
+          skillsNumber={this.state.skillsNumber}
+          handleSelectSkills={this.handleSelectSkills}
+          handleNumberOfSelects={this.handleNumberOfSelects}
+          skillsSelected={this.state.skillsSelected}
+      />
+
       </React.Fragment>
     );
   }

@@ -5,6 +5,23 @@ import Skills from './Skills';
 
 class Fill extends React.Component {
 
+  generateSelectTags = () => {
+    let selectTags = [];
+    const signals = ["fas fa-plus","fas fa-minus","fas fa-minus"];
+
+    for (var num = 0; num < this.props.skillsNumber; num++) {
+      selectTags.push(<Skills
+            skillsList={this.props.skillsList}
+            handleSelectSkills={this.props.handleSelectSkills}
+            handleNumberOfSelects={this.props.handleNumberOfSelects}
+            skillsSelected={this.props.skillsSelected}
+            PlusOrMinus={signals[num]}
+            dataSelectNumber={num}
+        />);
+      }
+              return selectTags;
+    }
+
   render() {
 
     return (
@@ -68,8 +85,10 @@ class Fill extends React.Component {
                       </div>
 
                       <div className="fill__form--abilitieslabelinput">
-                          <label className="fill__label--items" htmlFor="habilidades">Habilidades (máximo 3)</label>
-                                  <Skills skills={this.props.skills} />
+                          <label className="fill__label--items" for="habilidades">Habilidades (máximo 3)</label>
+
+                          {  this.generateSelectTags() }
+
                       </div>
 
                   </div>
@@ -79,8 +98,6 @@ class Fill extends React.Component {
     );
   }
 
-
 }
-
 
 export default Fill;

@@ -12,8 +12,25 @@ class Page extends React.Component {
     return (
       <div className="page">
       <Header logoCards={logoCards} />
-      <Main changeName={this.props.changeName} name={this.props.name} changeJob={this.props.changeJob} job={this.props.job} tituloRellena={this.props.tituloRellena} titleD={this.props.titleD} fontTypes={this.props.fontTypes} skills={this.props.skills} palette={this.props.palette} changePalette={this.props.changePalette} tipography={this.props.tipography} changeTipography={this.props.changeTipography} />
-      <Footer logoAdalab={logoAdalab} copy={this.props.footerCopy} url={this.props.footerUrl} />
+      <Main
+            changeName={this.props.changeName}
+            name={this.props.name}
+            changeJob={this.props.changeJob}
+            job={this.props.job}
+            palette={this.props.palette}
+            changePalette={this.props.changePalette}
+            tipography={this.props.tipography}
+            changeTipography={this.props.changeTipography}
+            tituloRellena={this.props.tituloRellena}
+            titleD={this.props.titleD}
+            fontTypes={this.props.fontTypes}
+            skillsList={this.props.skillsList}
+            skillsNumber={this.props.skillsNumber}
+            handleSelectSkills={this.props.handleSelectSkills}
+            handleNumberOfSelects={this.props.handleNumberOfSelects}
+            skillsSelected={this.props.skillsSelected}
+      />
+      <Footer logoAdalab={logoAdalab} copy={this.props.footerCopy} url={this.props.footerUrl}/>
       </div>
     );
   }
