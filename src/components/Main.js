@@ -28,7 +28,8 @@ class Main extends React.Component {
 							 	job={this.props.job}
 							 	palette={this.props.palette}
 							 	tipography={this.props.tipography}
-							 	skillsSelected={this.props.skillsSelected}
+								 skillsSelected={this.props.skillsSelected}
+								 resetCard={this.props.resetCard}
 				 />
 
 			</main>

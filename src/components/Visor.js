@@ -34,6 +34,7 @@ tipographyVisor(){
             palette={this.props.palette}
             colorClass={this.colorVisor()}
             skillsSelected={this.props.skillsSelected}
+            resetCard={this.props.resetCard}
       />
     );
   }

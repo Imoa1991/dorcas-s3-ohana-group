@@ -90,6 +90,10 @@ handleNumberOfSelects = clickedSelected => {
     }
 }
 
+resetCard = () => {
+  alert('hello');
+}
+
   render() {
 
     return (
@@ -108,6 +112,7 @@ handleNumberOfSelects = clickedSelected => {
           handleSelectSkills={this.handleSelectSkills}
           handleNumberOfSelects={this.handleNumberOfSelects}
           skillsSelected={this.state.skillsSelected}
+          resetCard={this.resetCard}
       />
 
       </React.Fragment>

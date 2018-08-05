@@ -4,10 +4,11 @@ class Reset extends React.Component {
   render(){
     return (
       <div className="viewfinder__button">
-        <button className="viewfinder__button-reset" type="reset" name="button">
+        <button className="viewfinder__button-reset" type="reset" name="button" onClick={this.props.resetCard}>
           <span className="viewfinder__button-icono">
             <i className="fas fa-trash-alt"></i>
-          </span>Reset</button>
+          </span>Reset
+        </button>
       </div>
 
     );
