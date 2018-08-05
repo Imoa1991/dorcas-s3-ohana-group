@@ -59,22 +59,23 @@ changeTipography(e){
 };
 changeEmail(e){
   this.setState({
-    email: e.currentTarget.value
+    email:'mailto:'+ e.currentTarget.value
   })
+
 };
 changePhone(e){
   this.setState({
-    phone: e.currentTarget.value
+    phone:'tel: +34'+ e.currentTarget.value
   })
 };
 changeLinkedin(e){
   this.setState({
-    linkedin: e.currentTarget.value
+    linkedin:'https://www.linkedin.com/in/'+ e.currentTarget.value
   })
 };
 changeGithub(e){
   this.setState({
-    github: e.currentTarget.value
+    github:'https://github.com/'+ e.currentTarget.value
   })
 };
 
