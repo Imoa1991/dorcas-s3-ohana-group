@@ -4,6 +4,14 @@ import Skills from './Skills';
 
 
 class Fill extends React.Component {
+  constructor(props){
+    super(props);
+    this.changefile = this.changefile.bind(this);
+  }
+  changefile(e){
+    const inputelement = document.querySelector("#img-selector");
+    inputelement.click();
+  }
 
   render() {
 
@@ -39,8 +47,8 @@ class Fill extends React.Component {
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="imagenperfil">Imagen de perfil</label>
                           <div className="fill__input--buttonandminiimg">
-                              <button type="button" className="fill__input--addimgbutton">Añadir imagen</button>
-                              <input type="file" onChange={this.props.handleImage} ref={this.props.fileImageRef} name="photo" id="img-selector" className="fill__input-photo"/>
+                              <button onClick={this.changefile} type="button" className="fill__input--addimgbutton">Añadir imagen</button>
+                              <input type="file" onChange={this.props.handleImage} ref={this.props.fileImageRef} name="photo" id="img-selector" className="fill__input-photo action__hiddenField"/>
                               <div className="fill__input--miniimg" style= {{backgroundImage: this.props.imageUrl}}>
                               </div>
                           </div>
