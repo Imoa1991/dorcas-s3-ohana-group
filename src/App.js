@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles/main.css';
 import Page from './components/Page'
+import { Route, Switch, Link } from ‘react-router-dom’;
 
 const fr = new FileReader();
 
@@ -157,10 +158,12 @@ resetCard = () => {
 }
 
   render() {
-
     return (
       <React.Fragment>
-
+         <Switch>
+           <Route exact path=‘/’ component={ Home } />
+           <Route path=‘/Page’component={ Page } />
+         </Switch>
       <Page
           changeName={this.changeName}
           name={this.state.name}
