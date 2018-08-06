@@ -26,6 +26,9 @@ class Page extends React.Component {
             handleNumberOfSelects={this.props.handleNumberOfSelects}
             skillsSelected={this.props.skillsSelected}
             resetCard={this.props.resetCard}
+            fileImageRef={this.props.fileImageRef}  
+            handleImage={this.props.handleImage} 
+            imageUrl={this.props.imageUrl}
       />
       <Footer />
       </div>
