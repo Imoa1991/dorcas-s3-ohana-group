@@ -113,6 +113,17 @@ handleNumberOfSelects = clickedSelected => {
     }
 }
 
+resetCard = () => {
+  this.setState({
+    name: "Nombre y Apellido",
+      job: "Front End Developer",
+      palette:1,
+      tipography: 1,
+      skillsNumber: 1,
+      skillsSelected: [],
+  })
+}
+
   render() {
 
     return (
@@ -131,6 +142,7 @@ handleNumberOfSelects = clickedSelected => {
           handleSelectSkills={this.handleSelectSkills}
           handleNumberOfSelects={this.handleNumberOfSelects}
           skillsSelected={this.state.skillsSelected}
+          resetCard={this.resetCard}
           fileImageRef={this.fileInput}
           handleImage={this.handleImage}
           imageUrl={this.state.imageUrl}
