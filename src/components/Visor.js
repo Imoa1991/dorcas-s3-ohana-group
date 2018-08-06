@@ -34,8 +34,12 @@ class Visor extends React.Component {
         palette={this.props.palette}
         colorClass={this.colorVisor()}
         skillsSelected={this.props.skillsSelected}
-        resetCard={this.props.resetCard}
         imageUrl={this.props.imageUrl}
+        email={this.props.email} 
+        phone={this.props.phone} 
+        linkedin={this.props.linkedin}
+        github={this.props.github}
+        resetCard={this.props.resetCard}
       />
     );
   }

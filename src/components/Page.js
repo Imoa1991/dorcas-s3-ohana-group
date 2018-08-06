@@ -11,6 +11,7 @@ class Page extends React.Component {
     return (
       <div className="page">
       <Header logoCards={logoCards} />
+
       <Main
             changeName={this.props.changeName}
             name={this.props.name}
@@ -29,8 +30,17 @@ class Page extends React.Component {
             fileImageRef={this.props.fileImageRef}  
             handleImage={this.props.handleImage} 
             imageUrl={this.props.imageUrl}
+            email={this.props.email} 
+            changeEmail={this.props.changeEmail} 
+            phone={this.props.phone} 
+            changePhone={this.props.changePhone}
+            linkedin={this.props.linkedin} 
+            changeLinkedin={this.props.changeLinkedin}
+            github={this.props.github} 
+            changeGithub={this.props.changeGithub} 
       />
       <Footer />
+
       </div>
     );
   }
