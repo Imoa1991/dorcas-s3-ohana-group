@@ -41,7 +41,8 @@
   .viewfinder__card {
     position: relative;
     background-color: #ffffff;
-    height: 367px; }
+    height: 367px;
+    width: 240px; }
   .viewfinder__card-title {
     display: flex; }
     .viewfinder__card-title-titlebox {
@@ -78,7 +79,8 @@
     align-items: center;
     margin: 5px 20px; }
     .viewfinder__tags-text {
-      width: 36px;
+      width: auto;
+      min-width: 36px;
       height: 18px;
       font-size: 13px;
       border-radius: 4px;
@@ -407,7 +409,7 @@
   margin-right: 20px; }
 
 .dropdown__fill {
-  margin: 10px 20px 25px 20px;
+  margin: 10px 20px 25px;
   display: flex;
   align-items: center;
   justify-content: space-between; }
@@ -466,7 +468,7 @@
     width: 30px;
     border: solid 1px #a2deaf;
     margin-left: 20px;
-    background-image: url();
+    background-image: url("");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover; }
@@ -477,7 +479,7 @@
   margin-top: 20px; }
 
 .fill__ability {
-  margin-bottom: 21px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center; }
 
@@ -486,7 +488,10 @@
   border-radius: 45px;
   height: 30px;
   width: 30px;
-  margin-left: 20px; }
+  margin-left: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 30px; }
   .abilitiesbutton .fa-plus {
     color: #e17334; }
   .abilitiesbutton .fa-minus {
