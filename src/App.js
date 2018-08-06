@@ -17,7 +17,7 @@ class App extends Component {
       email:'',
       phone:'',
       linkedin:'',
-      github:''
+      github:'',
       imageUrl: `url("https://i.imgur.com/EGpLjJ2.jpg")`,
       skillsList: [],
       skillsNumber: 1,
@@ -180,11 +180,11 @@ resetCard = () => {
           handleImage={this.handleImage}
           imageUrl={this.state.imageUrl}
           email={this.state.email}
-          changeEmail={this.changeEmail} 
-          phone={this.state.phone} 
+          changeEmail={this.changeEmail}
+          phone={this.state.phone}
           changePhone={this.changePhone}
-          linkedin={this.state.linkedin} 
-          changeLinkedin={this.changeLinkedin} 
+          linkedin={this.state.linkedin}
+          changeLinkedin={this.changeLinkedin}
           github={this.state.github}
           changeGithub={this.changeGithub}
       />
