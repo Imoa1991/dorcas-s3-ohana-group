@@ -163,34 +163,37 @@ resetCard = () => {
       <React.Fragment>
          <Switch>
            <Route exact path='/' component={ Home } />
-           <Route path='/Page' component={ Page } />
+           <Route path='/Page' render={ () =>
+             <Page
+             changeName={this.changeName}
+             name={this.state.name}
+             changeJob={this.changeJob}
+             job={this.state.job}
+             palette={this.state.palette}
+             changePalette={this.changePalette}
+             tipography={this.state.tipography}
+             changeTipography={this.changeTipography}
+             skillsList={this.state.skillsList}
+             skillsNumber={this.state.skillsNumber}
+             handleSelectSkills={this.handleSelectSkills}
+             handleNumberOfSelects={this.handleNumberOfSelects}
+             skillsSelected={this.state.skillsSelected}
+             resetCard={this.resetCard}
+             fileImageRef={this.fileInput}
+             handleImage={this.handleImage}
+             imageUrl={this.state.imageUrl}
+             email={this.state.email}
+             changeEmail={this.changeEmail}
+             phone={this.state.phone}
+             changePhone={this.changePhone}
+             linkedin={this.state.linkedin}
+             changeLinkedin={this.changeLinkedin}
+             github={this.state.github}
+             changeGithub={this.changeGithub}
+              />
+            }
+            />
          </Switch>
-      <Page
-          changeName={this.changeName}
-          name={this.state.name}
-          changeJob={this.changeJob}
-          job={this.state.job}
-          palette={this.state.palette}
-          changePalette={this.changePalette}
-          tipography={this.state.tipography}
-          changeTipography={this.changeTipography}
-          skillsList={this.state.skillsList}
-          skillsNumber={this.state.skillsNumber}
-          handleSelectSkills={this.handleSelectSkills}
-          handleNumberOfSelects={this.handleNumberOfSelects}
-          skillsSelected={this.state.skillsSelected}
-          resetCard={this.resetCard}
-          fileImageRef={this.fileInput}
-          handleImage={this.handleImage}
-          imageUrl={this.state.imageUrl}
-          email={this.state.email}
-          changeEmail={this.changeEmail}
-          phone={this.state.phone}
-          changePhone={this.changePhone}
-          linkedin={this.state.linkedin}
-          changeLinkedin={this.changeLinkedin}
-          github={this.state.github}
-          changeGithub={this.changeGithub}
       />
 
       </React.Fragment>
