@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './styles/main.css';
 import Page from './components/Page';
 import Home from './components/Home';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 const fr = new FileReader();
 
@@ -194,8 +194,7 @@ resetCard = () => {
             }
             />
          </Switch>
-      />
-
+      
       </React.Fragment>
     );
   }
