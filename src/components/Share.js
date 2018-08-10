@@ -13,11 +13,11 @@ class Share extends React.Component {
             <h2 className="dropdown__fill--nameText ">Comparte</h2>
           </div>
           <span className="arrow">
-            <i className="fas fa-angle-up"></i>
+            <i className="fas fa-angle-up" onClick={this.props.generateJsonToShare}></i>
           </span>
         </div>
         <div className="shares__input--buttonandminiimg">
-          <button className="shares__input--addimgbutton collapsible__content">
+          <button className="shares__input--addimgbutton collapsible__content" onClick={this.props.generateCardToShare}>
             <i className="far fa-address-card"></i>Crear tarjeta</button>
         </div>
         <div className="loader collapsible__content hidden">Loading...</div>

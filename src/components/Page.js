@@ -27,17 +27,19 @@ class Page extends React.Component {
             handleNumberOfSelects={this.props.handleNumberOfSelects}
             skillsSelected={this.props.skillsSelected}
             resetCard={this.props.resetCard}
-            fileImageRef={this.props.fileImageRef}  
-            handleImage={this.props.handleImage} 
+            fileImageRef={this.props.fileImageRef}
+            handleImage={this.props.handleImage}
             imageUrl={this.props.imageUrl}
-            email={this.props.email} 
-            changeEmail={this.props.changeEmail} 
-            phone={this.props.phone} 
+            email={this.props.email}
+            changeEmail={this.props.changeEmail}
+            phone={this.props.phone}
             changePhone={this.props.changePhone}
-            linkedin={this.props.linkedin} 
+            linkedin={this.props.linkedin}
             changeLinkedin={this.props.changeLinkedin}
-            github={this.props.github} 
-            changeGithub={this.props.changeGithub} 
+            github={this.props.github}
+            changeGithub={this.props.changeGithub}
+            generateJsonToShare={this.props.generateJsonToShare}
+            generateCardToShare={this.props.generateCardToShare}
       />
       <Footer />
 

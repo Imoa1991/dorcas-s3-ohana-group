@@ -23,17 +23,19 @@ class Main extends React.Component {
             		handleSelectSkills={this.props.handleSelectSkills}
 								handleNumberOfSelects={this.props.handleNumberOfSelects}
 								skillsSelected={this.props.skillsSelected}
-                fileImageRef={this.props.fileImageRef}  
-                handleImage={this.props.handleImage} 
-                imageUrl={this.props.imageUrl} 
-                email={this.props.email} 
-                changeEmail={this.props.changeEmail} 
-                phone={this.props.phone} 
+                fileImageRef={this.props.fileImageRef}
+                handleImage={this.props.handleImage}
+                imageUrl={this.props.imageUrl}
+                email={this.props.email}
+                changeEmail={this.props.changeEmail}
+                phone={this.props.phone}
                 changePhone={this.props.changePhone}
                 linkedin={this.props.linkedin}
                 changeLinkedin={this.props.changeLinkedin}
                 github={this.props.github}
                 changeGithub={this.props.changeGithub}
+								generateJsonToShare={this.props.generateJsonToShare}
+								generateCardToShare={this.props.generateCardToShare}
         />
 				 <Visor
 								name={this.props.name}
@@ -43,8 +45,8 @@ class Main extends React.Component {
 							 	skillsSelected={this.props.skillsSelected}
                 imageUrl={this.props.imageUrl}
                 email={this.props.email}
-                phone={this.props.phone} 
-                linkedin={this.props.linkedin} 
+                phone={this.props.phone}
+                linkedin={this.props.linkedin}
                 github={this.props.github}
 				 />
 			</main>
