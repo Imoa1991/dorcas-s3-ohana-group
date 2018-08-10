@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import './styles/main.css';
 import Page from './components/Page';
 import Home from './components/Home';
+import Result from './components/Result';
+import OhanaSea from './imagenes/ohana-sea.jpg';
+
 import { Route, Switch, Link } from 'react-router-dom';
 
 const fr = new FileReader();
+let finalCardToShareObject = {};
 
 class App extends Component {
 
@@ -20,7 +24,8 @@ class App extends Component {
       phone:'',
       linkedin:'',
       github:'',
-      imageUrl: `url("https://i.imgur.com/EGpLjJ2.jpg")`,
+      imageUrl: OhanaSea,
+      image: '',
       skillsList: [],
       skillsNumber: 1,
       skillsSelected: [],
@@ -35,7 +40,8 @@ class App extends Component {
         "github": "dorcas-ohana",
         "photo": "data:image/png;base64,2342ba...",
         "skills": ["HTML", "Sass", "JavaScript"]
-      }
+      },
+      finalCardToShare: {}
     };
 
     this.callAbilitiesAPI();
@@ -49,6 +55,8 @@ class App extends Component {
     this.changeGithub = this.changeGithub.bind(this);
     this.writeImages = this.writeImages.bind(this);
     this.handleImage = this.handleImage.bind(this);
+    this.generateCardToShare = this.generateCardToShare.bind(this);
+    this.saveToStateFinalCardToShare = this.saveToStateFinalCardToShare.bind(this);
   }
 
   changeName(e){
@@ -62,11 +70,13 @@ class App extends Component {
       job: e.currentTarget.value
     })
   };
+
   changePalette(e){
     this.setState({
       palette: e.currentTarget.value
     })
   };
+
   changeTipography(e){
     this.setState({
       tipography: e.currentTarget.value
@@ -77,18 +87,20 @@ class App extends Component {
     this.setState({
       email:'mailto:'+ e.currentTarget.value
     })
-
   };
+
   changePhone(e){
     this.setState({
       phone:'tel: +34'+ e.currentTarget.value
     })
   };
+
   changeLinkedin(e){
     this.setState({
       linkedin:'https://www.linkedin.com/in/'+ e.currentTarget.value
     })
   };
+
   changeGithub(e){
     this.setState({
       github:'https://github.com/'+ e.currentTarget.value
@@ -103,7 +115,8 @@ class App extends Component {
 
   writeImages(){
     this.setState({
-      imageUrl: `url("${fr.result}")`
+      imageUrl: `url("${fr.result}")`,
+      image: fr.result
     });
   }
 
@@ -155,6 +168,7 @@ class App extends Component {
   }
 
   resetCard = () => {
+    alert('reset');
     this.setState({
       name: "Nombre y Apellido",
       job: "Front End Developer",
@@ -162,6 +176,12 @@ class App extends Component {
       tipography: 1,
       skillsNumber: 1,
       skillsSelected: [],
+      imageUrl: '',
+      image: '',
+      email:'',
+      phone:'',
+      linkedin:'',
+      github:'',
     })
   }
 
@@ -176,41 +196,57 @@ class App extends Component {
         "email": this.state.email,
         "linkedin": this.state.linkedin,
         "github": this.state.github,
-        "photo": this.state.imageUrl,
+        "photo": this.state.image,
         "skills": this.state.skillsSelected
       }
     })
   }
 
-  generateCardToShare = () => {
-console.log(this.state.cardData);
-    alert('Generando tarjeta.\nLa solicitud puede llevar algunos instantes.')
+  generateCardToShare() {
+    console.log(JSON.stringify(this.state.cardData));
     fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
       method: 'POST',
-      body: this.state.cardData,
+      body: JSON.stringify(this.state.cardData),
       headers: {
         'content-type': 'application/json'
       },
     })
-    .then(function(resp) { return resp.json(); })
-    .then(function(result) { this.showURL(result); })
-    .catch(function(error) { console.log(error); });
+    .then(function(resp) {
+      return resp.json();
+    })
+    .then(function(result) {
+      finalCardToShareObject = result;
+      document.querySelector('.saveRetrievedCardData').click();
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
   }
 
-  showURL = (result) => {
+  saveToStateFinalCardToShare() {
+    this.setState({
+      finalCardToShare: finalCardToShareObject
+    })
+  }
+
+
+
+
+
+  showURL(result) {
+    console.log(result.cardURL);
     const body = document.querySelector('body');
     if(result.success){
-console.log(result.cardURL);
       body.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
     }else{
       body.innerHTML = 'ERROR:' + result.error;
     }
   }
 
-
   render() {
     return (
       <React.Fragment>
+        <button className="saveRetrievedCardData" onClick={this.saveToStateFinalCardToShare}>Do not click</button>
         <Switch>
           <Route exact path='/' component={ Home } />
           <Route path='/Page' render={ () =>
@@ -245,8 +281,13 @@ console.log(result.cardURL);
             />
           }
         />
-      </Switch>
-    />
+        <Route path='/result'  render={ () =>
+          <Result
+            finalCardToShare={this.state.finalCardToShare}
+          />
+        }
+      />
+    </Switch>
 
   </React.Fragment>
 );

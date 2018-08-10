@@ -48,6 +48,7 @@ class Main extends React.Component {
                 phone={this.props.phone}
                 linkedin={this.props.linkedin}
                 github={this.props.github}
+								resetCard={this.props.resetCard}
 				 />
 			</main>
 			);

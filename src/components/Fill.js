@@ -53,7 +53,7 @@ class Fill extends React.Component {
                   <div id="fill__form--itemscontainer" className="fill__form--itemscontainer" action="index.html" method="post">
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="nombrecompleto">Nombre completo</label>
-                          <input className="fill__input--items fill__input-name" type="text" id="nombrecompleto" name="name" placeholder="Ej: Sally Jill" data-info="element-name" onChange={this.props.changeName}/>
+                          <input className="fill__input--items fill__input-name" type="text" id="nombrecompleto" name="name" placeholder="Ej: Dorcas Muthoni" data-info="element-name" onChange={this.props.changeName}/>
                       </div>
 
                       <div className="fill__form--labelinput">
@@ -73,7 +73,7 @@ class Fill extends React.Component {
 
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="email">Email</label>
-                          <input className="fill__input--items fill__input-mail" type="email" id="email" name="email" placeholder="Ej: sally-jill@gmail.com" data-donde="element-mail" onChange={this.props.changeEmail}/>
+                          <input className="fill__input--items fill__input-mail" type="email" id="email" name="email" placeholder="Ej: dorcasmuthoni@ohana.com" data-donde="element-mail" onChange={this.props.changeEmail}/>
                       </div>
 
                       <div className="fill__form--labelinput">
@@ -83,13 +83,13 @@ class Fill extends React.Component {
 
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="linkedin">Linkedin</label>
-                          <input className="fill__input--items fill__input-linkedin" type="text" id="linkedin" name="linkedin" placeholder="Ej: sally.jill"
+                          <input className="fill__input--items fill__input-linkedin" type="text" id="linkedin" name="linkedin" placeholder="Ej: dorcasmuthoni.ohana"
                           data-donde="element-linkedin" onChange={this.props.changeLinkedin}/>
                       </div>
 
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="github">Github</label>
-                          <input className="fill__input--items fill__input-github" type="text" id="github" name="github" placeholder="Ej: sallyjill" data-donde="element-github" onChange={this.props.changeGithub}/>
+                          <input className="fill__input--items fill__input-github" type="text" id="github" name="github" placeholder="Ej: dorcasohana" data-donde="element-github" onChange={this.props.changeGithub}/>
                       </div>
 
                       <div className="fill__form--abilitieslabelinput">
