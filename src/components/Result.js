@@ -33,7 +33,7 @@ class Result extends React.Component {
                 <iframe className="result__iframe" src={this.props.finalCardToShare.cardURL}></iframe>
               </a>
 
-              <a className="shares__twitter" type="button" name="button" target="_blank">
+              <a className="shares__twitter" type="button" name="button" target="_blank" href={`https://twitter.com/intent/tweet?url='${this.props.finalCardToShare.cardURL}'&text=Mi Awesome Profile-Card: ${this.props.finalCardToShare.cardURL} (powered by Ohana Group / @AdaLab_Digital) &hashtags=WomenInTech,Adalabers`}>
                 <i className="fab fa-twitter shares__twitter-logo"></i>
                 <p className="shares__twitter-text">Compartir en Twitter</p>
               </a>
