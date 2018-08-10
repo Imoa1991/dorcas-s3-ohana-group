@@ -1,7 +1,7 @@
 import React from 'react';
 import LogoCard from '../imagenes/logo-awesome-profile-cards.svg';
 import LogoAdalab from '../imagenes/logo-adalab-80px.png';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
     render() {
@@ -31,11 +31,9 @@ class Home extends React.Component {
                         </li>
                     </ul>
                     <div className="main__button">
-                        <a href="card.html">
                             <Link to='/Page'>
                               <button type="button" name="button" className="main__button--start">Comenzar</button>
                             </Link>
-                        </a>
                     </div>
                 </section>
             </main>
