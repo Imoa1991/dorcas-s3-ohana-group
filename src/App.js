@@ -229,10 +229,6 @@ class App extends Component {
     })
   }
 
-
-
-
-
   showURL(result) {
     console.log(result.cardURL);
     const body = document.querySelector('body');
@@ -292,6 +288,7 @@ class App extends Component {
   </React.Fragment>
 );
 }
+
 }
 
 export default App;
