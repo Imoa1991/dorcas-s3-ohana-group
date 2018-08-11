@@ -16,8 +16,8 @@ class App extends Component {
     super(props);
     this.fileInput = React.createRef();
     this.state = {
-      name: "Nombre y Apellido",
-      job: "Front End Developer",
+      name: "",
+      job: "",
       palette:1,
       tipography: 1,
       email:'',
@@ -36,8 +36,8 @@ class App extends Component {
         "job": "Developer",
         "phone": "+34 666666666",
         "email": "dorcas@ohana.com",
-        "linkedin": "dorcas-ohana",
-        "github": "dorcas-ohana",
+        "linkedin": "dorcas.ohana",
+        "github": "dorcasohana",
         "photo": "data:image/png;base64,2342ba...",
         "skills": ["HTML", "Sass", "JavaScript"]
       },
@@ -168,10 +168,9 @@ class App extends Component {
   }
 
   resetCard = () => {
-    alert('reset');
     this.setState({
-      name: "Nombre y Apellido",
-      job: "Front End Developer",
+      name: "",
+      job: "",
       palette:1,
       tipography: 1,
       skillsNumber: 1,
@@ -183,6 +182,9 @@ class App extends Component {
       linkedin:'',
       github:'',
     })
+  document.querySelector('.abilitiesdropdown').firstChild.selected = true;
+  document.querySelector('.radio--blue').checked = true;
+  document.querySelector('.radio--ubuntu').checked = true;
   }
 
   generateJsonToShare = () => {

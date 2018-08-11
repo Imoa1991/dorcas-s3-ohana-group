@@ -16,9 +16,9 @@ addOrRemoveSelect = event => {
       <div className="fill__ability fill__ability--js">
           <select className="abilitiesdropdown abilitiesdropdown--js" name="abilities" id="habilidades" onChange={this.handleSelect} data-selectNumber={this.props.dataSelectNumber} value={this.props.skillsSelected[this.props.dataSelectNumber]}>
           <option hidden>Seleccionar habilidad</option>
-                {this.props.skillsList.map(function(item) {
+                {this.props.skillsList.map(function(item,index) {
                   return (
-                    <option value={item} className="options--skils">{item}</option>
+                    <option value={item} className="options--skils" key={index}>{item}</option>
                   );
                 })}
           </select>

@@ -12,8 +12,8 @@ class Card extends React.Component {
               <div className="viewfinder__card-title">
                 <div className="viewfinder__card-title-rectangule"></div>
                 <div className="viewfinder__card-titlebox">
-                  <h2 className="viewfinder__card-title-name" id="element-name">{this.props.name}</h2>
-                  <h3 className="viewfinder__card-title-job" id="element-job">{this.props.job}</h3>
+                  <h2 className="viewfinder__card-title-name" id="element-name">{this.props.name !== "" ? this.props.name : "Nombre y Apellido"}</h2>
+                  <h3 className="viewfinder__card-title-job" id="element-job">{this.props.job !== "" ? this.props.job : "Front-end Unicorn"}</h3>
                 </div>
               </div>
               <div className="viewfinder__photo" style={{backgroundImage: this.props.imageUrl}} >
@@ -52,7 +52,7 @@ class Card extends React.Component {
                   }
 
               </div>
-                <Reset 
+                <Reset
                 resetCard={this.props.resetCard}/>
             </div>
           </section>
