@@ -194,7 +194,7 @@ resetCard = () => {
             }
             />
          </Switch>
-      
+
       </React.Fragment>
     );
   }
