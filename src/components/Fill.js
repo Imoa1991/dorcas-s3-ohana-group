@@ -53,12 +53,12 @@ class Fill extends React.Component {
                   <div id="fill__form--itemscontainer" className="fill__form--itemscontainer" action="index.html" method="post">
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="nombrecompleto">Nombre completo</label>
-                          <input className="fill__input--items fill__input-name" type="text" id="nombrecompleto" name="name" placeholder="Ej: Sally Jill" data-info="element-name" onChange={this.props.changeName}/>
+                          <input className="fill__input--items fill__input-name" type="text" id="nombrecompleto" name="name" placeholder="Ej: Sally Jill" data-info="element-name" onChange={this.props.changeName} defaultValue={this.props.name}/>
                       </div>
 
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="puesto">Puesto</label>
-                          <input className="fill__input--items fill__input-job" type="text" id="puesto" name="job" placeholder="Ej: Front-end unicorn" data-info="element-job" onChange={this.props.changeJob}/>
+                          <input className="fill__input--items fill__input-job" type="text" id="puesto" name="job" placeholder="Ej: Front-end unicorn" data-info="element-job" onChange={this.props.changeJob} defaultValue={this.props.job}/>
                       </div>
 
                       <div className="fill__form--labelinput">
@@ -73,23 +73,23 @@ class Fill extends React.Component {
 
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="email">Email</label>
-                          <input className="fill__input--items fill__input-mail" type="email" id="email" name="email" placeholder="Ej: sally-jill@gmail.com" data-donde="element-mail" onChange={this.props.changeEmail}/>
+                          <input className="fill__input--items fill__input-mail" type="email" id="email" name="email" placeholder="Ej: sally-jill@gmail.com" data-donde="element-mail" onChange={this.props.changeEmail} defaultValue={this.props.email}/>
                       </div>
 
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="tlf">Teléfono</label>
-                          <input className="fill__input--items fill__input-phone" type="tel" id="tlf" name="phone" placeholder="Ej: 555 55 55 55" data-donde="element-phone" onChange={this.props.changePhone}/>
+                          <input className="fill__input--items fill__input-phone" type="tel" id="tlf" name="phone" placeholder="Ej: 555 55 55 55" data-donde="element-phone" onChange={this.props.changePhone} defaultValue={this.props.phone}/>
                       </div>
 
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="linkedin">Linkedin</label>
                           <input className="fill__input--items fill__input-linkedin" type="text" id="linkedin" name="linkedin" placeholder="Ej: sally.jill"
-                          data-donde="element-linkedin" onChange={this.props.changeLinkedin}/>
+                          data-donde="element-linkedin" onChange={this.props.changeLinkedin} defaultValue={this.props.linkedin}/>
                       </div>
 
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="github">Github</label>
-                          <input className="fill__input--items fill__input-github" type="text" id="github" name="github" placeholder="Ej: sallyjill" data-donde="element-github" onChange={this.props.changeGithub}/>
+                          <input className="fill__input--items fill__input-github" type="text" id="github" name="github" placeholder="Ej: sallyjill" data-donde="element-github" onChange={this.props.changeGithub} defaultValue={this.props.github}/>
                       </div>
 
                       <div className="fill__form--abilitieslabelinput">
