@@ -36,6 +36,7 @@ class Main extends React.Component {
                 changeGithub={this.props.changeGithub}
 								generateJsonToShare={this.props.generateJsonToShare}
 								generateCardToShare={this.props.generateCardToShare}
+								readyToShare={this.props.readyToShare}
         />
 				 <Visor
 								name={this.props.name}

@@ -94,7 +94,7 @@ class Fill extends React.Component {
                       </div>
 
                       <div className="fill__form--abilitieslabelinput">
-                          <label className="fill__label--items" for="habilidades">Habilidades (máximo 3)</label>
+                          <label className="fill__label--items" htmlFor="habilidades">Habilidades (máximo 3)</label>
 
                           {  this.generateSelectTags() }
 

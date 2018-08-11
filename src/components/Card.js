@@ -41,10 +41,10 @@ class Card extends React.Component {
                 </div>
               </div>
               <div className="viewfinder__tags">
-                  {this.props.skillsSelected.map(skill => {
+                  {this.props.skillsSelected.map((skill,index) => {
 
                   return (
-                    <div className="viewfinder__tags-text">
+                    <div className="viewfinder__tags-text" key={index}>
                       <p className="skilltext">{skill}</p>
                     </div>
                   )
