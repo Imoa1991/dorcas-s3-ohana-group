@@ -26,19 +26,22 @@ class Form extends React.Component {
             handleSelectSkills={this.props.handleSelectSkills}
 						handleNumberOfSelects={this.props.handleNumberOfSelects}
 						skillsSelected={this.props.skillsSelected}
-            fileImageRef={this.props.fileImageRef}  
-            handleImage={this.props.handleImage} 
+            fileImageRef={this.props.fileImageRef}
+            handleImage={this.props.handleImage}
             imageUrl={this.props.imageUrl}
-            email={this.props.email} 
-            changeEmail={this.props.changeEmail} 
-            phone={this.props.phone} 
-            changePhone={this.props.changePhone} 
+            email={this.props.email}
+            changeEmail={this.props.changeEmail}
+            phone={this.props.phone}
+            changePhone={this.props.changePhone}
             linkedin={this.props.linkedin}
             changeLinkedin={this.props.changeLinkedin}
-            github={this.props.github} 
-            changeGithub={this.props.changeGithub} 
+            github={this.props.github}
+            changeGithub={this.props.changeGithub}
 			/>
-			<Share />
+			<Share
+						generateJsonToShare={this.props.generateJsonToShare}
+						generateCardToShare={this.props.generateCardToShare}
+			/>
 			</form>
 		);
 	}

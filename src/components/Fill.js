@@ -54,6 +54,7 @@ class Fill extends React.Component {
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="nombrecompleto">Nombre completo</label>
                           <input className="fill__input--items fill__input-name" type="text" id="nombrecompleto" name="name" placeholder="Ej: Sally Jill" data-info="element-name" onChange={this.props.changeName} defaultValue={this.props.name}/>
+
                       </div>
 
                       <div className="fill__form--labelinput">
