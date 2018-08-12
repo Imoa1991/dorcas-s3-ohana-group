@@ -11,45 +11,51 @@ const fr = new FileReader();
 let finalCardToShareObject = {};
 
 class App extends Component {
-
   constructor(props){
     super(props);
+    let stateFromLocalStorage = JSON.parse(localStorage.getItem('state'));
     this.fileInput = React.createRef();
-    this.state = {
-      name: "",
-      job: "",
-      palette:1,
-      tipography: 1,
-      email:'',
-      phone:'',
-      linkedin:'',
-      github:'',
-      imageUrl: OhanaSea,
-      image: '',
-      skillsList: [],
-      skillsNumber: 1,
-      skillsSelected: [],
-      cardData: {
-        "palette": 1,
-        "typography": 1,
-        "name" : "Dorcas Muthoni",
-        "job": "Developer",
-        "phone": "+34 666666666",
-        "email": "dorcas@ohana.com",
-        "linkedin": "dorcas.ohana",
-        "github": "dorcasohana",
-        "photo": "data:image/png;base64,2342ba...",
-        "skills": ["HTML", "Sass", "JavaScript"]
-      },
-      finalCardToShare: {},
-      readyToShare: false,
-      design_colapsed: "collapsible--visible",
-      fill_colapsed: "",
-      share_colapsed: ""
-    };
+    if(stateFromLocalStorage == null) {
+      this.state = {
+        name: "",
+        job: "",
+        palette:1,
+        tipography: 1,
+        email:'',
+        phone:'',
+        linkedin:'',
+        github:'',
+        imageUrl: OhanaSea,
+        image: '',
+        skillsList: [],
+        skillsNumber: 1,
+        skillsSelected: [],
+        finalCardToShare: {},
+        readyToShare: false,
+        design_colapsed: "collapsible--visible",
+        fill_colapsed: "",
+        share_colapsed: "",
+        cardData: {
+          "palette": 1,
+          "typography": 1,
+          "name" : "Dorcas Muthoni",
+          "job": "Developer",
+          "phone": "+34 666666666",
+          "email": "dorcas@ohana.com",
+          "linkedin": "dorcas.ohana",
+          "github": "dorcasohana",
+          "photo": "data:image/png;base64,2342ba...",
+          "skills": ["HTML", "Sass", "JavaScript"]
+        }
+      };
+    } else {
+      this.state = stateFromLocalStorage;
+    }
+
 
     this.callAbilitiesAPI();
-    this.changeStateProperty= this.changeStateProperty.bind(this);
+    this.changeStateProperty = this.changeStateProperty.bind(this);
+    this.saveStateLocalStorage = this.saveStateLocalStorage.bind(this);
     this.writeImages = this.writeImages.bind(this);
     this.handleImage = this.handleImage.bind(this);
     this.generateCardToShare = this.generateCardToShare.bind(this);
@@ -58,10 +64,14 @@ class App extends Component {
     this.clickFill = this.clickFill.bind(this);
     this.clickShare = this.clickShare.bind(this);
   }
+  saveStateLocalStorage() {
+    localStorage.setItem('state', JSON.stringify(this.state));
+  }
   changeStateProperty(e, property) {
     this.setState({
       [property]: e.currentTarget.value
     })
+    this.saveStateLocalStorage();
   };
 
   handleImage(event) {
@@ -75,6 +85,7 @@ class App extends Component {
       imageUrl: `url("${fr.result}")`,
       image: fr.result
     });
+    this.saveStateLocalStorage();
   }
 
   callAbilitiesAPI = () => {
@@ -86,6 +97,7 @@ class App extends Component {
         skillsList: json.skills
       });
     });
+    this.saveStateLocalStorage();
   };
 
 
@@ -95,6 +107,7 @@ class App extends Component {
     this.setState({
       skillsSelected: currentSkillsSelected
     });
+    this.saveStateLocalStorage();
   }
 
   handleNumberOfSelects = clickedSelected => {
@@ -122,6 +135,7 @@ class App extends Component {
         });
       }
     }
+    this.saveStateLocalStorage();
   }
 
   resetCard = () => {
@@ -180,6 +194,7 @@ class App extends Component {
         })
       }
     },1)
+    this.saveStateLocalStorage();
   }
 
   generateCardToShare() {
@@ -213,6 +228,7 @@ class App extends Component {
     this.setState({
       finalCardToShare: finalCardToShareObject
     })
+    this.saveStateLocalStorage();
   }
 
   showURL(result) {
@@ -237,6 +253,7 @@ class App extends Component {
         share_colapsed: ""
       })
     }
+    this.saveStateLocalStorage();
   }
 
   clickFill(e) {
@@ -251,6 +268,7 @@ class App extends Component {
         share_colapsed: ""
       })
     }
+    this.saveStateLocalStorage();
   }
 
   clickShare(e) {
@@ -266,6 +284,7 @@ class App extends Component {
       })
     }
   this.generateJsonToShare();
+  this.saveStateLocalStorage();
   }
 
   render() {

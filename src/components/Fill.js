@@ -18,7 +18,7 @@ class Fill extends React.Component {
     const signals = ["fas fa-plus","fas fa-minus","fas fa-minus"];
 
     for (var num = 0; num < this.props.skillsNumber; num++) {
-      selectTags.push(<Skills
+      selectTags.push(<Skills key={num}
             skillsList={this.props.skillsList}
             handleSelectSkills={this.props.handleSelectSkills}
             handleNumberOfSelects={this.props.handleNumberOfSelects}
@@ -33,7 +33,6 @@ class Fill extends React.Component {
   render() {
 
     return (
-
       <section className={`dropdown__second collapsible ${this.props.fill_colapsed}`}>
           <div className="border">
               <div onClick={this.props.clickFill}  className="dropdown__fill collapsible__label">
@@ -96,7 +95,7 @@ class Fill extends React.Component {
                       <div className="fill__form--abilitieslabelinput">
                           <label className="fill__label--items" htmlFor="habilidades">Habilidades (máximo 3)</label>
 
-                          {  this.generateSelectTags() }
+                          { this.generateSelectTags() }
 
                       </div>
 
