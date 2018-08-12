@@ -53,13 +53,13 @@ class Fill extends React.Component {
                   <div id="fill__form--itemscontainer" className="fill__form--itemscontainer" action="index.html" method="post">
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="nombrecompleto">Nombre completo</label>
-                          <input className="fill__input--items fill__input-name" type="text" id="nombrecompleto" name="name" placeholder="Ej: Dorcas Muthoni" data-info="element-name" onChange={this.props.changeName} value={this.props.name}/>
+                          <input className="fill__input--items fill__input-name" type="text" id="nombrecompleto" name="name" placeholder="Ej: Dorcas Muthoni" data-info="element-name" onChange={(e) => this.props.changeStateProperty(e, 'name')} value={this.props.name}/>
 
                       </div>
 
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="puesto">Puesto</label>
-                          <input className="fill__input--items fill__input-job" type="text" id="puesto" name="job" placeholder="Ej: Front-end Unicorn" data-info="element-job" onChange={this.props.changeJob} value={this.props.job}/>
+                          <input className="fill__input--items fill__input-job" type="text" id="puesto" name="job" placeholder="Ej: Front-end Unicorn" data-info="element-job" onChange={(e) => this.props.changeStateProperty(e, 'job')} value={this.props.job}/>
                       </div>
 
                       <div className="fill__form--labelinput">
@@ -74,23 +74,23 @@ class Fill extends React.Component {
 
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="email">Email</label>
-                          <input className="fill__input--items fill__input-mail" type="email" id="email" name="email" placeholder="Ej: dorcas@ohana.com" data-donde="element-mail" onChange={this.props.changeEmail} value={this.props.email}/>
+                          <input className="fill__input--items fill__input-mail" type="email" id="email" name="email" placeholder="Ej: dorcas@ohana.com" data-donde="element-mail" onChange={(e) => this.props.changeStateProperty(e, 'email')} value={this.props.email}/>
                       </div>
 
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="tlf">Teléfono</label>
-                          <input className="fill__input--items fill__input-phone" type="tel" id="tlf" name="phone" placeholder="Ej: 555 55 55 55" data-donde="element-phone" onChange={this.props.changePhone} value={this.props.phone}/>
+                          <input className="fill__input--items fill__input-phone" type="tel" id="tlf" name="phone" placeholder="Ej: 555 55 55 55" data-donde="element-phone" onChange={(e) => this.props.changeStateProperty(e, 'phone')} value={this.props.phone}/>
                       </div>
 
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="linkedin">Linkedin</label>
                           <input className="fill__input--items fill__input-linkedin" type="text" id="linkedin" name="linkedin" placeholder="Ej: dorcas.ohana"
-                          data-donde="element-linkedin" onChange={this.props.changeLinkedin} value={this.props.linkedin}/>
+                          data-donde="element-linkedin" onChange={(e) => this.props.changeStateProperty(e, 'linkedin')} value={this.props.linkedin}/>
                       </div>
 
                       <div className="fill__form--labelinput">
                           <label className="fill__label--items" htmlFor="github">Github</label>
-                          <input className="fill__input--items fill__input-github" type="text" id="github" name="github" placeholder="Ej: dorcasohana" data-donde="element-github" onChange={this.props.changeGithub} value={this.props.github}/>
+                          <input className="fill__input--items fill__input-github" type="text" id="github" name="github" placeholder="Ej: dorcasohana" data-donde="element-github" onChange={(e) => this.props.changeStateProperty(e, 'github')} value={this.props.github}/>
                       </div>
 
                       <div className="fill__form--abilitieslabelinput">

@@ -11,46 +11,40 @@ class Form extends React.Component {
 
 			<form className="main__form" action="javascript:void(0);">
 			<Design
-						palette={this.props.palette}
-						changePalette={this.props.changePalette}
-						tipography={this.props.tipography}
-						changeTipography={this.props.changeTipography}
-            design_colapsed={this.props.design_colapsed}
-            clickDesign={this.props.clickDesign}
+				changeStateProperty={this.props.changeStateProperty}
+				palette={this.props.palette}
+				tipography={this.props.tipography}
+			  design_colapsed={this.props.design_colapsed}
+        clickDesign={this.props.clickDesign}
 			/>
 			<Fill
-						changeName={this.props.changeName}
-						name={this.props.name}
-						changeJob={this.props.changeJob}
-						job={this.props.job}
-						skillsList={this.props.skillsList}
-            skillsNumber={this.props.skillsNumber}
-            handleSelectSkills={this.props.handleSelectSkills}
-						handleNumberOfSelects={this.props.handleNumberOfSelects}
-						skillsSelected={this.props.skillsSelected}
-            fileImageRef={this.props.fileImageRef}
-            handleImage={this.props.handleImage}
-            imageUrl={this.props.imageUrl}
-            email={this.props.email}
-            changeEmail={this.props.changeEmail}
-            phone={this.props.phone}
-            changePhone={this.props.changePhone}
-            linkedin={this.props.linkedin}
-            changeLinkedin={this.props.changeLinkedin}
-            github={this.props.github}
-            changeGithub={this.props.changeGithub}
-            fill_colapsed={this.props.fill_colapsed}
-            clickFill={this.props.clickFill}
+				changeStateProperty={this.props.changeStateProperty}
+				name={this.props.name}
+				job={this.props.job}
+				skillsList={this.props.skillsList}
+        skillsNumber={this.props.skillsNumber}
+        handleSelectSkills={this.props.handleSelectSkills}
+				handleNumberOfSelects={this.props.handleNumberOfSelects}
+				skillsSelected={this.props.skillsSelected}
+        fileImageRef={this.props.fileImageRef}
+        handleImage={this.props.handleImage}
+        imageUrl={this.props.imageUrl}
+        email={this.props.email}
+        phone={this.props.phone}
+      	linkedin={this.props.linkedin}
+        github={this.props.github}
+        fill_colapsed={this.props.fill_colapsed}
+        clickFill={this.props.clickFill}
 			/>
 			<Share
-						generateJsonToShare={this.props.generateJsonToShare}
-						generateCardToShare={this.props.generateCardToShare}
-						readyToShare={this.props.readyToShare}
-            design_colapsed={this.props.design_colapsed}
-            share_colapsed={this.props.share_colapsed}
-						clickShare={this.props.clickShare}
+				generateJsonToShare={this.props.generateJsonToShare}
+				generateCardToShare={this.props.generateCardToShare}
+				readyToShare={this.props.readyToShare}
+        design_colapsed={this.props.design_colapsed}
+        share_colapsed={this.props.share_colapsed}
+				clickShare={this.props.clickShare}
 			/>
-			</form>
+		</form>
 		);
 	}
 }

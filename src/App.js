@@ -49,14 +49,7 @@ class App extends Component {
     };
 
     this.callAbilitiesAPI();
-    this.changeName = this.changeName.bind(this);
-    this.changeJob = this.changeJob.bind(this);
-    this.changePalette = this.changePalette.bind(this);
-    this.changeTipography = this.changeTipography.bind(this);
-    this.changeEmail = this.changeEmail.bind(this);
-    this.changePhone = this.changePhone.bind(this);
-    this.changeLinkedin = this.changeLinkedin.bind(this);
-    this.changeGithub = this.changeGithub.bind(this);
+    this.changeStateProperty= this.changeStateProperty.bind(this);
     this.writeImages = this.writeImages.bind(this);
     this.handleImage = this.handleImage.bind(this);
     this.generateCardToShare = this.generateCardToShare.bind(this);
@@ -65,51 +58,9 @@ class App extends Component {
     this.clickFill = this.clickFill.bind(this);
     this.clickShare = this.clickShare.bind(this);
   }
-
-  changeName(e){
+  changeStateProperty(e, property) {
     this.setState({
-      name: e.currentTarget.value
-    })
-  };
-
-  changeJob(e){
-    this.setState({
-      job: e.currentTarget.value
-    })
-  };
-
-  changePalette(e){
-    this.setState({
-      palette: e.currentTarget.value
-    })
-  };
-
-  changeTipography(e){
-    this.setState({
-      tipography: e.currentTarget.value
-    })
-  };
-  changePhone(e){
-    this.setState({
-      phone: e.currentTarget.value
-    })
-  };
-
-  changeEmail(e){
-    this.setState({
-      email: e.currentTarget.value
-    })
-  };
-  
-  changeLinkedin(e){
-    this.setState({
-      linkedin: e.currentTarget.value
-    })
-  };
-
-  changeGithub(e){
-    this.setState({
-      github: e.currentTarget.value
+      [property]: e.currentTarget.value
     })
   };
 
@@ -325,14 +276,11 @@ class App extends Component {
           <Route exact path='/' component={ Home } />
           <Route path='/Page' render={ () =>
             <Page
-              changeName={this.changeName}
+              changeStateProperty={this.changeStateProperty}
               name={this.state.name}
-              changeJob={this.changeJob}
               job={this.state.job}
               palette={this.state.palette}
-              changePalette={this.changePalette}
               tipography={this.state.tipography}
-              changeTipography={this.changeTipography}
               skillsList={this.state.skillsList}
               skillsNumber={this.state.skillsNumber}
               handleSelectSkills={this.handleSelectSkills}
@@ -343,13 +291,9 @@ class App extends Component {
               handleImage={this.handleImage}
               imageUrl={this.state.imageUrl}
               email={this.state.email}
-              changeEmail={this.changeEmail}
               phone={this.state.phone}
-              changePhone={this.changePhone}
               linkedin={this.state.linkedin}
-              changeLinkedin={this.changeLinkedin}
               github={this.state.github}
-              changeGithub={this.changeGithub}
               generateJsonToShare={this.generateJsonToShare}
               generateCardToShare={this.generateCardToShare}
               readyToShare={this.state.readyToShare}
