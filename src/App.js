@@ -315,6 +315,7 @@ class App extends Component {
         design_colapsed: ""
       })
     }
+  this.generateJsonToShare();
   }
 
   render() {
