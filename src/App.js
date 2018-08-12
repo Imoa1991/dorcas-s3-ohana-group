@@ -16,8 +16,8 @@ class App extends Component {
     super(props);
     this.fileInput = React.createRef();
     this.state = {
-      name: "Nombre y Apellido",
-      job: "Front End Developer",
+      name: "",
+      job: "",
       palette:1,
       tipography: 1,
       email:'',
@@ -36,12 +36,13 @@ class App extends Component {
         "job": "Developer",
         "phone": "+34 666666666",
         "email": "dorcas@ohana.com",
-        "linkedin": "dorcas-ohana",
-        "github": "dorcas-ohana",
+        "linkedin": "dorcas.ohana",
+        "github": "dorcasohana",
         "photo": "data:image/png;base64,2342ba...",
         "skills": ["HTML", "Sass", "JavaScript"]
       },
       finalCardToShare: {},
+      readyToShare: false,
       design_colapsed: "collapsible--visible",
       fill_colapsed: "",
       share_colapsed: ""
@@ -163,7 +164,7 @@ class App extends Component {
         this.setState({
           skillsNumber: currentNumbber
         })
-        const position = clickedSelected.parentElement.getAttribute('data-buttonNumber');
+        const position = clickedSelected.parentElement.getAttribute('data-buttonnumber');
         const currentSkillsSelected = this.state.skillsSelected;
         currentSkillsSelected.splice(position,1);
         this.setState({
@@ -174,10 +175,9 @@ class App extends Component {
   }
 
   resetCard = () => {
-    alert('reset');
     this.setState({
-      name: "Nombre y Apellido",
-      job: "Front End Developer",
+      name: "",
+      job: "",
       palette:1,
       tipography: 1,
       skillsNumber: 1,
@@ -188,7 +188,11 @@ class App extends Component {
       phone:'',
       linkedin:'',
       github:'',
+      readyToShare: false,
     })
+    document.querySelector('.abilitiesdropdown').firstChild.selected = true;
+    document.querySelector('.radio--blue').checked = true;
+    document.querySelector('.radio--ubuntu').checked = true;
   }
 
   generateJsonToShare = () => {
@@ -206,27 +210,53 @@ class App extends Component {
         "skills": this.state.skillsSelected
       }
     })
+    setTimeout( () => {
+      if (
+        this.state.cardData.name === "" ||
+        this.state.cardData.job === "" ||
+        this.state.cardData.phone === "" ||
+        this.state.cardData.email === "" ||
+        this.state.cardData.linkedin === "" ||
+        this.state.cardData.github === "" ||
+        this.state.cardData.photo === "" ||
+        this.state.cardData.skills.length === 0
+      ) {
+        this.setState({
+          readyToShare: false,
+        })
+      } else {
+        this.setState({
+          readyToShare: true,
+        })
+      }
+    },1)
   }
 
   generateCardToShare() {
-    console.log(JSON.stringify(this.state.cardData));
-    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
-      method: 'POST',
-      body: JSON.stringify(this.state.cardData),
-      headers: {
-        'content-type': 'application/json'
-      },
-    })
-    .then(function(resp) {
-      return resp.json();
-    })
-    .then(function(result) {
-      finalCardToShareObject = result;
-      document.querySelector('.saveRetrievedCardData').click();
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
+
+    if (!this.state.readyToShare) {
+      alert('Es necesario rellenar todos los campos para generar tarjeta.')
+
+    } else {
+
+      fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+        method: 'POST',
+        body: JSON.stringify(this.state.cardData),
+        headers: {
+          'content-type': 'application/json'
+        },
+      })
+      .then(function(resp) {
+        return resp.json();
+      })
+      .then(function(result) {
+        finalCardToShareObject = result;
+        document.querySelector('.saveRetrievedCardData').click();
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    }
   }
 
   saveToStateFinalCardToShare() {
@@ -285,6 +315,7 @@ class App extends Component {
         design_colapsed: ""
       })
     }
+  this.generateJsonToShare();
   }
 
   render() {
@@ -322,6 +353,7 @@ class App extends Component {
               changeGithub={this.changeGithub}
               generateJsonToShare={this.generateJsonToShare}
               generateCardToShare={this.generateCardToShare}
+              readyToShare={this.state.readyToShare}
               design_colapsed={this.state.design_colapsed}
               fill_colapsed={this.state.fill_colapsed}
               share_colapsed={this.state.share_colapsed}

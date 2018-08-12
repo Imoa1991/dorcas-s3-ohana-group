@@ -40,6 +40,7 @@ class Page extends React.Component {
             changeGithub={this.props.changeGithub}
             generateJsonToShare={this.props.generateJsonToShare}
             generateCardToShare={this.props.generateCardToShare}
+            readyToShare={this.props.readyToShare}
             design_colapsed={this.props.design_colapsed}
             fill_colapsed={this.props.fill_colapsed}
             share_colapsed={this.props.share_colapsed}

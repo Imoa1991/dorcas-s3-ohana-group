@@ -4,6 +4,7 @@ import LogoCard from '../imagenes/logo-awesome-profile-cards.svg';
 import LogoAdalab from '../imagenes/logo-adalab-80px.png';
 import LogoOhana from '../imagenes/ohana.png';
 import Loading from '../imagenes/loading.gif';
+import Footer from '../components/Footer';
 
 class Result extends React.Component {
 
@@ -26,7 +27,7 @@ class Result extends React.Component {
           )}
 
           {this.props.finalCardToShare.cardURL !== undefined && (
-            <section className="shares collapsible__content">
+            <section className="shares">
               <p className="shares__text">La tarjeta ha sido creada:</p>
 
               <a href={this.props.finalCardToShare.cardURL}>
@@ -38,21 +39,11 @@ class Result extends React.Component {
                 <p className="shares__twitter-text">Compartir en Twitter</p>
               </a>
 
-              <footer className="footer">
-                <p className="footer__copyright">Awesome profile-cards @ 2018</p>
-                <div className="footer__logo">
-
-                  <img className="footer__logo--image footer__logo--image-ohana" src={LogoOhana} alt="Logo de Ohana " />
-                </div>
-                <div className="footer__logo">
-                  <a title="Adalab" href="http://adalab.es/">
-                  <img className="footer__logo--image" src={LogoAdalab} alt="Logo de Adalab" />
-                </a>
-              </div>
-            </footer>
+              <Footer />
 
           </section>
         )}
+
       </main>
     </div>
   );

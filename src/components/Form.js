@@ -45,6 +45,7 @@ class Form extends React.Component {
 			<Share
 						generateJsonToShare={this.props.generateJsonToShare}
 						generateCardToShare={this.props.generateCardToShare}
+						readyToShare={this.props.readyToShare}
             design_colapsed={this.props.design_colapsed}
             share_colapsed={this.props.share_colapsed}
 						clickShare={this.props.clickShare}

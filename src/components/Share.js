@@ -18,15 +18,19 @@ class Share extends React.Component {
             </span>
           </div>
           <div className="shares__input--buttonandminiimg">
-            <Link to='/Result'>
-            <button className="shares__input--addimgbutton collapsible__content" onMouseOver={this.props.generateJsonToShare} onClick={this.props.generateCardToShare}>
-              <i className="far fa-address-card"></i>Crear tarjeta</button>
-            </Link>
-          </div>
-        </div>
-      </section>
-  );
-}
-}
+            {this.props.readyToShare ? (
+              <Link to='/Result' className="shares__link">
+              <button className="shares__input--addimgbutton collapsible__content shares__link--button" onClick={this.props.generateCardToShare}>
+                <i className="far fa-address-card"></i>Crear tarjeta</button>
+              </Link>) : (
+                <button className="shares__input--addimgbutton collapsible__content" onMouseOver={this.props.generateJsonToShare} onClick={this.props.generateCardToShare}>
+                  <i className="far fa-address-card"></i>Crear tarjeta</button>
+                )}
+              </div>
+            </div>
+          </section>
+        );
+      }
+    }
 
-export default Share;
+    export default Share;
