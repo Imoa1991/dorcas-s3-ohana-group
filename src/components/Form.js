@@ -15,6 +15,8 @@ class Form extends React.Component {
 						changePalette={this.props.changePalette}
 						tipography={this.props.tipography}
 						changeTipography={this.props.changeTipography}
+            design_colapsed={this.props.design_colapsed}
+            clickDesign={this.props.clickDesign}
 			/>
 			<Fill
 						changeName={this.props.changeName}
@@ -37,10 +39,15 @@ class Form extends React.Component {
             changeLinkedin={this.props.changeLinkedin}
             github={this.props.github}
             changeGithub={this.props.changeGithub}
+            fill_colapsed={this.props.fill_colapsed}
+            clickFill={this.props.clickFill}
 			/>
 			<Share
 						generateJsonToShare={this.props.generateJsonToShare}
 						generateCardToShare={this.props.generateCardToShare}
+            design_colapsed={this.props.design_colapsed}
+            share_colapsed={this.props.share_colapsed}
+						clickShare={this.props.clickShare}
 			/>
 			</form>
 		);

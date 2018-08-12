@@ -52,7 +52,7 @@ class Card extends React.Component {
                   }
 
               </div>
-                <Reset 
+                <Reset
                 resetCard={this.props.resetCard}/>
             </div>
           </section>

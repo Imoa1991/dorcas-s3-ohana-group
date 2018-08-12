@@ -4,10 +4,9 @@ class Design extends React.Component {
   render() {
 
     return (
-
-      <section className="dropdown__first collapsible collapsible--visible">
+      <section className={`dropdown__first collapsible ${this.props.design_colapsed}`}>
         <div className="border">
-          <div className="dropdown__desing collapsible__label">
+          <div onClick={this.props.clickDesign} className="dropdown__desing collapsible__label">
             <div className="dropdown__desing--name">
               <div className="">
                 <i className="far fa-object-ungroup dropdown__desing--nameIcon"></i>
