@@ -41,6 +41,12 @@ class Page extends React.Component {
             generateJsonToShare={this.props.generateJsonToShare}
             generateCardToShare={this.props.generateCardToShare}
             readyToShare={this.props.readyToShare}
+            design_colapsed={this.props.design_colapsed}
+            fill_colapsed={this.props.fill_colapsed}
+            share_colapsed={this.props.share_colapsed}
+            clickDesign={this.props.clickDesign}
+            clickFill={this.props.clickFill}
+            clickShare={this.props.clickShare}
       />
       <Footer />
 
