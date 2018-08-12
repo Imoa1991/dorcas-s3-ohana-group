@@ -41,7 +41,10 @@ class App extends Component {
         "photo": "data:image/png;base64,2342ba...",
         "skills": ["HTML", "Sass", "JavaScript"]
       },
-      finalCardToShare: {}
+      finalCardToShare: {},
+      design_colapsed: "collapsible--visible",
+      fill_colapsed: "",
+      share_colapsed: ""
     };
 
     this.callAbilitiesAPI();
@@ -57,6 +60,9 @@ class App extends Component {
     this.handleImage = this.handleImage.bind(this);
     this.generateCardToShare = this.generateCardToShare.bind(this);
     this.saveToStateFinalCardToShare = this.saveToStateFinalCardToShare.bind(this);
+    this.clickDesign = this.clickDesign.bind(this);
+    this.clickFill = this.clickFill.bind(this);
+    this.clickShare = this.clickShare.bind(this);
   }
 
   changeName(e){
@@ -239,6 +245,48 @@ class App extends Component {
     }
   }
 
+  clickDesign(e) {
+    if (this.state.design_colapsed == 'collapsible--visible') {
+      this.setState({
+        design_colapsed: ""
+      })
+    } else {
+      this.setState({
+        design_colapsed: "collapsible--visible",
+        fill_colapsed: "",
+        share_colapsed: ""
+      })
+    }
+  }
+
+  clickFill(e) {
+    if (this.state.fill_colapsed == 'collapsible--visible') {
+      this.setState({
+        fill_colapsed: ""
+      })
+    } else {
+      this.setState({
+        fill_colapsed: "collapsible--visible",
+        design_colapsed: "",
+        share_colapsed: ""
+      })
+    }
+  }
+
+  clickShare(e) {
+    if (this.state.share_colapsed == 'collapsible--visible') {
+      this.setState({
+        share_colapsed: ""
+      })
+    } else {
+      this.setState({
+        share_colapsed: "collapsible--visible",
+        fill_colapsed: "",
+        design_colapsed: ""
+      })
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -274,6 +322,12 @@ class App extends Component {
               changeGithub={this.changeGithub}
               generateJsonToShare={this.generateJsonToShare}
               generateCardToShare={this.generateCardToShare}
+              design_colapsed={this.state.design_colapsed}
+              fill_colapsed={this.state.fill_colapsed}
+              share_colapsed={this.state.share_colapsed}
+              clickDesign={this.clickDesign}
+              clickFill={this.clickFill}
+              clickShare={this.clickShare}
             />
           }
         />

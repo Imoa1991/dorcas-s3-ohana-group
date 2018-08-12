@@ -34,9 +34,9 @@ class Fill extends React.Component {
 
     return (
 
-      <section className="dropdown__second collapsible">
+      <section className={`dropdown__second collapsible ${this.props.fill_colapsed}`}>
           <div className="border">
-              <div className="dropdown__fill collapsible__label">
+              <div onClick={this.props.clickFill}  className="dropdown__fill collapsible__label">
                   <div className="dropdown__fill--name">
                       <div className="">
                           <i className="far fa-keyboard dropdown__fill--nameIcon"></i>
