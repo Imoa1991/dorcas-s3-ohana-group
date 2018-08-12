@@ -89,28 +89,27 @@ class App extends Component {
       tipography: e.currentTarget.value
     })
   };
+  changePhone(e){
+    this.setState({
+      phone: e.currentTarget.value
+    })
+  };
 
   changeEmail(e){
     this.setState({
-      email:'mailto:'+ e.currentTarget.value
+      email: e.currentTarget.value
     })
   };
-
-  changePhone(e){
-    this.setState({
-      phone:'tel: +34'+ e.currentTarget.value
-    })
-  };
-
+  
   changeLinkedin(e){
     this.setState({
-      linkedin:'https://www.linkedin.com/in/'+ e.currentTarget.value
+      linkedin: e.currentTarget.value
     })
   };
 
   changeGithub(e){
     this.setState({
-      github:'https://github.com/'+ e.currentTarget.value
+      github: e.currentTarget.value
     })
   };
 

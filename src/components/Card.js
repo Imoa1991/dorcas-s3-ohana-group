@@ -20,22 +20,22 @@ class Card extends React.Component {
               </div>
               <div className="viewfinder__icons">
                 <div className="viewfinder__icons-box mobileicon">
-                  <a id="element-phone" href={this.props.phone} className="viewfinder__icons--links mobilelink" target="_blank">
+                  <a id="element-phone" href={'tel: +34' + this.props.phone} className="viewfinder__icons--links mobilelink" target="_blank">
                     <i className="fas fa-mobile-alt"></i>
                   </a>
                 </div>
                 <div className="viewfinder__icons-box emailicon">
-                  <a id="element-mail" href={this.props.email}className="viewfinder__icons--links emaillink" target="_blank">
+                  <a id="element-mail" href={'mailto:' + this.props.email} className="viewfinder__icons--links emaillink" target="_blank">
                     <i className="far fa-envelope"></i>
                   </a>
                 </div>
                 <div className="viewfinder__icons-box linkedinicon">
-                  <a id="element-linkedin" href={this.props.linkedin} className="viewfinder__icons--links linkedinlink" target="_blank">
+                  <a id="element-linkedin" href={'https://www.linkedin.com/in/' + this.props.linkedin} className="viewfinder__icons--links linkedinlink" target="_blank">
                     <i className="fab fa-linkedin-in"></i>
                   </a>
                 </div>
                 <div className="viewfinder__icons-box githubicon">
-                  <a id="element-github" href={this.props.github} className="viewfinder__icons--links githublink" target="_blank">
+                  <a id="element-github" href={'https://github.com/' + this.props.github} className="viewfinder__icons--links githublink" target="_blank">
                     <i className="fab fa-github-alt"></i>
                   </a>
                 </div>
