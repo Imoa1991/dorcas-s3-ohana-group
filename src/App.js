@@ -11,52 +11,51 @@ const fr = new FileReader();
 let finalCardToShareObject = {};
 
 class App extends Component {
-
   constructor(props){
     super(props);
+    let stateFromLocalStorage = JSON.parse(localStorage.getItem('state'));
     this.fileInput = React.createRef();
-    this.state = {
-      name: "",
-      job: "",
-      palette:1,
-      tipography: 1,
-      email:'',
-      phone:'',
-      linkedin:'',
-      github:'',
-      imageUrl: OhanaSea,
-      image: '',
-      skillsList: [],
-      skillsNumber: 1,
-      skillsSelected: [],
-      cardData: {
-        "palette": 1,
-        "typography": 1,
-        "name" : "Dorcas Muthoni",
-        "job": "Developer",
-        "phone": "+34 666666666",
-        "email": "dorcas@ohana.com",
-        "linkedin": "dorcas.ohana",
-        "github": "dorcasohana",
-        "photo": "data:image/png;base64,2342ba...",
-        "skills": ["HTML", "Sass", "JavaScript"]
-      },
-      finalCardToShare: {},
-      readyToShare: false,
-      design_colapsed: "collapsible--visible",
-      fill_colapsed: "",
-      share_colapsed: ""
-    };
+    if(stateFromLocalStorage == null) {
+      this.state = {
+        name: "",
+        job: "",
+        palette:1,
+        tipography: 1,
+        email:'',
+        phone:'',
+        linkedin:'',
+        github:'',
+        imageUrl: OhanaSea,
+        image: '',
+        skillsList: [],
+        skillsNumber: 1,
+        skillsSelected: [],
+        finalCardToShare: {},
+        readyToShare: false,
+        design_colapsed: "collapsible--visible",
+        fill_colapsed: "",
+        share_colapsed: "",
+        cardData: {
+          "palette": 1,
+          "typography": 1,
+          "name" : "Dorcas Muthoni",
+          "job": "Developer",
+          "phone": "+34 666666666",
+          "email": "dorcas@ohana.com",
+          "linkedin": "dorcas.ohana",
+          "github": "dorcasohana",
+          "photo": "data:image/png;base64,2342ba...",
+          "skills": ["HTML", "Sass", "JavaScript"]
+        }
+      };
+    } else {
+      this.state = stateFromLocalStorage;
+    }
+
 
     this.callAbilitiesAPI();
-    this.changeName = this.changeName.bind(this);
-    this.changeJob = this.changeJob.bind(this);
-    this.changePalette = this.changePalette.bind(this);
-    this.changeTipography = this.changeTipography.bind(this);
-    this.changeEmail = this.changeEmail.bind(this);
-    this.changePhone = this.changePhone.bind(this);
-    this.changeLinkedin = this.changeLinkedin.bind(this);
-    this.changeGithub = this.changeGithub.bind(this);
+    this.changeStateProperty = this.changeStateProperty.bind(this);
+    this.saveStateLocalStorage = this.saveStateLocalStorage.bind(this);
     this.writeImages = this.writeImages.bind(this);
     this.handleImage = this.handleImage.bind(this);
     this.generateCardToShare = this.generateCardToShare.bind(this);
@@ -65,52 +64,14 @@ class App extends Component {
     this.clickFill = this.clickFill.bind(this);
     this.clickShare = this.clickShare.bind(this);
   }
-
-  changeName(e){
+  saveStateLocalStorage() {
+    localStorage.setItem('state', JSON.stringify(this.state));
+  }
+  changeStateProperty(e, property) {
     this.setState({
-      name: e.currentTarget.value
+      [property]: e.currentTarget.value
     })
-  };
-
-  changeJob(e){
-    this.setState({
-      job: e.currentTarget.value
-    })
-  };
-
-  changePalette(e){
-    this.setState({
-      palette: e.currentTarget.value
-    })
-  };
-
-  changeTipography(e){
-    this.setState({
-      tipography: e.currentTarget.value
-    })
-  };
-  changePhone(e){
-    this.setState({
-      phone: e.currentTarget.value
-    })
-  };
-
-  changeEmail(e){
-    this.setState({
-      email: e.currentTarget.value
-    })
-  };
-  
-  changeLinkedin(e){
-    this.setState({
-      linkedin: e.currentTarget.value
-    })
-  };
-
-  changeGithub(e){
-    this.setState({
-      github: e.currentTarget.value
-    })
+    this.saveStateLocalStorage();
   };
 
   handleImage(event) {
@@ -124,6 +85,7 @@ class App extends Component {
       imageUrl: `url("${fr.result}")`,
       image: fr.result
     });
+    this.saveStateLocalStorage();
   }
 
   callAbilitiesAPI = () => {
@@ -135,6 +97,7 @@ class App extends Component {
         skillsList: json.skills
       });
     });
+    this.saveStateLocalStorage();
   };
 
 
@@ -144,6 +107,7 @@ class App extends Component {
     this.setState({
       skillsSelected: currentSkillsSelected
     });
+    this.saveStateLocalStorage();
   }
 
   handleNumberOfSelects = clickedSelected => {
@@ -171,6 +135,7 @@ class App extends Component {
         });
       }
     }
+    this.saveStateLocalStorage();
   }
 
   resetCard = () => {
@@ -229,6 +194,7 @@ class App extends Component {
         })
       }
     },1)
+    this.saveStateLocalStorage();
   }
 
   generateCardToShare() {
@@ -262,6 +228,7 @@ class App extends Component {
     this.setState({
       finalCardToShare: finalCardToShareObject
     })
+    this.saveStateLocalStorage();
   }
 
   showURL(result) {
@@ -286,6 +253,7 @@ class App extends Component {
         share_colapsed: ""
       })
     }
+    this.saveStateLocalStorage();
   }
 
   clickFill(e) {
@@ -300,6 +268,7 @@ class App extends Component {
         share_colapsed: ""
       })
     }
+    this.saveStateLocalStorage();
   }
 
   clickShare(e) {
@@ -315,6 +284,7 @@ class App extends Component {
       })
     }
   this.generateJsonToShare();
+  this.saveStateLocalStorage();
   }
 
   render() {
@@ -325,14 +295,11 @@ class App extends Component {
           <Route exact path='/' component={ Home } />
           <Route path='/Page' render={ () =>
             <Page
-              changeName={this.changeName}
+              changeStateProperty={this.changeStateProperty}
               name={this.state.name}
-              changeJob={this.changeJob}
               job={this.state.job}
               palette={this.state.palette}
-              changePalette={this.changePalette}
               tipography={this.state.tipography}
-              changeTipography={this.changeTipography}
               skillsList={this.state.skillsList}
               skillsNumber={this.state.skillsNumber}
               handleSelectSkills={this.handleSelectSkills}
@@ -343,13 +310,9 @@ class App extends Component {
               handleImage={this.handleImage}
               imageUrl={this.state.imageUrl}
               email={this.state.email}
-              changeEmail={this.changeEmail}
               phone={this.state.phone}
-              changePhone={this.changePhone}
               linkedin={this.state.linkedin}
-              changeLinkedin={this.changeLinkedin}
               github={this.state.github}
-              changeGithub={this.changeGithub}
               generateJsonToShare={this.generateJsonToShare}
               generateCardToShare={this.generateCardToShare}
               readyToShare={this.state.readyToShare}
