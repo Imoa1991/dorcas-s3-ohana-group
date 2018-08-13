@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Result from './Result';
 
 class Share extends React.Component {
   render() {
@@ -14,19 +15,20 @@ class Share extends React.Component {
               <h2 className="dropdown__fill--nameText ">Comparte</h2>
             </div>
             <span className="arrow">
-              <i className="fas fa-angle-up"></i>
+              <i className="fas fa-angle-down icon--arrow"></i>
             </span>
           </div>
-          <div className="shares__input--buttonandminiimg">
-            {this.props.readyToShare ? (
-              <Link to='/Result' className="shares__link">
-              <button className="shares__input--addimgbutton collapsible__content shares__link--button" onClick={this.props.generateCardToShare}>
+          <div className="shares__input--buttonandminiimg collapsible__content">
+              <button className={`shares__input--addimgbutton collapsible__content ${this.props.readyToShare && "shares__link--button"}`} onClick={this.props.generateCardToShare}>
                 <i className="far fa-address-card"></i>Crear tarjeta</button>
-              </Link>) : (
-                <button className="shares__input--addimgbutton collapsible__content" onMouseOver={this.props.generateJsonToShare} onClick={this.props.generateCardToShare}>
-                  <i className="far fa-address-card"></i>Crear tarjeta</button>
-                )}
+
               </div>
+            </div>
+            <div className="border">
+              <Result
+                   finalCardToShare={this.props.finalCardToShare}
+                   generateCardClicked={this.props.generateCardClicked}
+              />
             </div>
           </section>
         );

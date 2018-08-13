@@ -12,13 +12,8 @@ class Result extends React.Component {
 
     return (
       <div className="result__screen">
-        <header className="result__header">
-          <img className="result__header--logo" src={LogoCard} alt="Logo Awesome profile Cards"/>
-        </header>
 
-        <main className="result__main">
-
-          {this.props.finalCardToShare.cardURL === undefined && (
+          {this.props.generateCardClicked && this.props.finalCardToShare.cardURL === undefined && (
 
             <div className="result__wait">
               <img src={Loading} alt="Cargando resultado" className="result__wait--img"/>
@@ -30,21 +25,17 @@ class Result extends React.Component {
             <section className="shares">
               <p className="shares__text">La tarjeta ha sido creada:</p>
 
-              <a href={this.props.finalCardToShare.cardURL}>
-                <iframe className="result__iframe" src={this.props.finalCardToShare.cardURL}></iframe>
+              <a href={this.props.finalCardToShare.cardURL}  className="shares__url">
+<p>{this.props.finalCardToShare.cardURL}</p>
               </a>
 
-              <a className="shares__twitter" type="button" name="button" target="_blank" href={`https://twitter.com/intent/tweet?url='${this.props.finalCardToShare.cardURL}'&text=Mi Awesome Profile-Card: ${this.props.finalCardToShare.cardURL} (powered by Ohana Group / @AdaLab_Digital) &hashtags=WomenInTech,Adalabers`}>
+              <a className="shares__twitter" type="button" name="button" target="_blank" href={`https://twitter.com/intent/tweet?url='${this.props.finalCardToShare.cardURL}'&text=My Awesome Profile-Card: ${this.props.finalCardToShare.cardURL} (powered by Ohana Group / @AdaLab_Digital) &hashtags=WomenInTech,Adalabers`}>
                 <i className="fab fa-twitter shares__twitter-logo"></i>
                 <p className="shares__twitter-text">Compartir en Twitter</p>
               </a>
 
-              <Footer />
-
           </section>
         )}
-
-      </main>
     </div>
   );
 }

@@ -36,6 +36,8 @@ class Main extends React.Component {
             clickDesign={this.props.clickDesign}
             clickFill={this.props.clickFill}
             clickShare={this.props.clickShare}
+						finalCardToShare={this.props.finalCardToShare}
+						generateCardClicked={this.props.generateCardClicked}
         />
 				 <Visor
 								name={this.props.name}
