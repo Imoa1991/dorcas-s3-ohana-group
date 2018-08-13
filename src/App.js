@@ -14,6 +14,8 @@ class App extends Component {
   constructor(props){
     super(props);
     let stateFromLocalStorage = JSON.parse(localStorage.getItem('state'));
+    stateFromLocalStorage.finalCardToShare = {};
+    stateFromLocalStorage.generateCardClicked = false;
     this.fileInput = React.createRef();
     if(stateFromLocalStorage == null) {
       this.state = {
@@ -102,7 +104,7 @@ class App extends Component {
     this.saveStateLocalStorage();
   };
 
-resetFinalCardToshare = () => this.state.finalCardToShare = {}
+  resetFinalCardToshare = () => this.state.finalCardToShare = {}
 
   handleSelectSkills = (newSkill,position) => {
     const currentSkillsSelected = this.state.skillsSelected;
@@ -207,9 +209,9 @@ resetFinalCardToshare = () => this.state.finalCardToShare = {}
 
     } else {
 
-    this.setState({
-      generateCardClicked: true
-    })
+      this.setState({
+        generateCardClicked: true
+      })
 
       fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
         method: 'POST',
@@ -290,8 +292,8 @@ resetFinalCardToshare = () => this.state.finalCardToShare = {}
         design_colapsed: ""
       })
     }
-  this.generateJsonToShare();
-  this.saveStateLocalStorage();
+    this.generateJsonToShare();
+    this.saveStateLocalStorage();
   }
 
   render() {
@@ -334,10 +336,10 @@ resetFinalCardToshare = () => this.state.finalCardToShare = {}
             />
           }
         />
-    </Switch>
+      </Switch>
 
-  </React.Fragment>
-);
+    </React.Fragment>
+  );
 }
 
 }
