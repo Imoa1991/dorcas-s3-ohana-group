@@ -43,6 +43,8 @@ class Form extends React.Component {
         design_colapsed={this.props.design_colapsed}
         share_colapsed={this.props.share_colapsed}
 				clickShare={this.props.clickShare}
+				finalCardToShare={this.props.finalCardToShare}
+				generateCardClicked={this.props.generateCardClicked}
 			/>
 		</form>
 		);

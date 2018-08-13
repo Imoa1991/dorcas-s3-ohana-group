@@ -14,7 +14,7 @@ class Design extends React.Component {
               <h2 className="dropdown__desing--nameText">Diseña</h2>
             </div>
             <span className="arrow">
-              <i className="fas fa-angle-up"></i>
+              <i className="fas fa-angle-down icon--arrow"></i>
             </span>
           </div>
           <div className="collapsible__content">

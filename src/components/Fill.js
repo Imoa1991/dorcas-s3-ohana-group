@@ -15,16 +15,15 @@ class Fill extends React.Component {
 
   generateSelectTags = () => {
     let selectTags = [];
-    const signals = ["fas fa-plus","fas fa-minus","fas fa-minus"];
 
     for (var num = 0; num < this.props.skillsNumber; num++) {
-      selectTags.push(<Skills key={num}
+      selectTags.push(<Skills
             skillsList={this.props.skillsList}
             handleSelectSkills={this.props.handleSelectSkills}
             handleNumberOfSelects={this.props.handleNumberOfSelects}
             skillsSelected={this.props.skillsSelected}
-            PlusOrMinus={signals[num]}
             dataSelectNumber={num}
+            skillsNumber={this.props.skillsNumber}
         />);
       }
               return selectTags;
@@ -44,7 +43,7 @@ class Fill extends React.Component {
                   </div>
 
                   <span className="arrow">
-                      <i className="fas fa-angle-up"></i>
+                      <i className="fas fa-angle-down icon--arrow"></i>
                   </span>
               </div>
 

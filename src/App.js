@@ -35,6 +35,7 @@ class App extends Component {
         design_colapsed: "collapsible--visible",
         fill_colapsed: "",
         share_colapsed: "",
+        generateCardClicked: false,
         cardData: {
           "palette": 1,
           "typography": 1,
@@ -54,6 +55,7 @@ class App extends Component {
 
 
     this.callAbilitiesAPI();
+    this.resetFinalCardToshare();
     this.changeStateProperty = this.changeStateProperty.bind(this);
     this.saveStateLocalStorage = this.saveStateLocalStorage.bind(this);
     this.writeImages = this.writeImages.bind(this);
@@ -100,6 +102,7 @@ class App extends Component {
     this.saveStateLocalStorage();
   };
 
+resetFinalCardToshare = () => this.state.finalCardToShare = {}
 
   handleSelectSkills = (newSkill,position) => {
     const currentSkillsSelected = this.state.skillsSelected;
@@ -203,6 +206,10 @@ class App extends Component {
       alert('Es necesario rellenar todos los campos para generar tarjeta.')
 
     } else {
+
+    this.setState({
+      generateCardClicked: true
+    })
 
       fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
         method: 'POST',
@@ -322,15 +329,11 @@ class App extends Component {
               clickDesign={this.clickDesign}
               clickFill={this.clickFill}
               clickShare={this.clickShare}
+              finalCardToShare={this.state.finalCardToShare}
+              generateCardClicked={this.state.generateCardClicked}
             />
           }
         />
-        <Route path='/result'  render={ () =>
-          <Result
-            finalCardToShare={this.state.finalCardToShare}
-          />
-        }
-      />
     </Switch>
 
   </React.Fragment>

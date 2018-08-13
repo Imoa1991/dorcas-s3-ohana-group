@@ -248,14 +248,6 @@
   }
 }
 
-.collapsible__content {
-  display: none;
-}
-
-.collapsible--visible .collapsible__content {
-  display: block;
-}
-
 .collapsible--visible .arrow {
   transform   : rotate(-180deg);
   margin-right: 0;
@@ -434,12 +426,13 @@
   height: 40px;
 }
 
-.fa-angle-up {
-  color: #54585a;
+.icon--arrow {
+  font-size: 20px;
+  color    : #54585a;
 }
 
 .dropdown__desing {
-  padding        : 30px 20px 31px;
+  padding        : 30px 20px 7px;
   display        : flex;
   align-items    : center;
   justify-content: space-between;
@@ -597,7 +590,7 @@
 }
 
 .dropdown__fill {
-  margin         : 10px 20px 25px;
+  margin         : 10px 20px 7px;
   display        : flex;
   align-items    : center;
   justify-content: space-between;
@@ -820,7 +813,11 @@
   display        : flex;
   align-items    : center;
   justify-content: center;
-  padding        : 30px 0;
+  padding        : 0 0 30px;
+}
+
+.shares__input--buttonandminiimg .collapsible__content {
+  margin-top: 0;
 }
 
 .shares__input--buttonandminiimg .shares__input--addimgbutton {
@@ -860,9 +857,10 @@
 }
 
 .shares__url {
-  font-size  : 12px;
-  color      : #e17334;
-  font-family: 'OpenSans-Regular', sans-serif;
+  font-size      : 12px;
+  color          : #e17334;
+  font-family    : 'OpenSans-Regular', sans-serif;
+  text-decoration: none;
 }
 
 .shares__twitter {
@@ -903,4 +901,17 @@
 
 .saveRetrievedCardData {
   display: none;
+}
+
+.collapsible__content {
+  display   : none;
+  margin-top: 25px;
+}
+
+.collapsible--visible .collapsible__content {
+  display: block;
+}
+
+.collapsible--visible .shares__input--buttonandminiimg {
+  display: flex;
 }
