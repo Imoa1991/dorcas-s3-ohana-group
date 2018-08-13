@@ -336,9 +336,6 @@ resetFinalCardToshare = () => this.state.finalCardToShare = {}
         />
     </Switch>
 
-<button onClick={()=> this.setState({ readyToShare: true})}> READY </button>
-<button onClick={()=> this.setState({ generateCardClicked: true})}> SET </button>
-<button onClick={()=> this.setState({ finalCardToShare: { cardURL:0 }})}> GO </button>
   </React.Fragment>
 );
 }

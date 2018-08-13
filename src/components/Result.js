@@ -6,7 +6,22 @@ import LogoOhana from '../imagenes/ohana.png';
 import Loading from '../imagenes/loading.gif';
 import Footer from '../components/Footer';
 
+
+const waitMusic = new Audio('http://freesound.org/data/previews/398/398328_3340187-lq.mp3');
+
+
 class Result extends React.Component {
+
+
+  // componentDidMount() {
+  // waitMusic.play();
+  //
+  // }
+  //
+  // waitMusicStop() {
+  // waitMusic.pause();
+  // waitMusic.currentTime = 0;
+  // }
 
   render () {
 
@@ -14,7 +29,6 @@ class Result extends React.Component {
       <div className="result__screen">
 
           {this.props.generateCardClicked && this.props.finalCardToShare.cardURL === undefined && (
-
             <div className="result__wait">
               <img src={Loading} alt="Cargando resultado" className="result__wait--img"/>
               <p className="result__wait--txt">La solicitud puede tardar algunos instantes.</p>
