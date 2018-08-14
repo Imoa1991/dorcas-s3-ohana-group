@@ -14,8 +14,11 @@ class App extends Component {
   constructor(props){
     super(props);
     let stateFromLocalStorage = JSON.parse(localStorage.getItem('state'));
-    stateFromLocalStorage.finalCardToShare = {};
+    if (stateFromLocalStorage !== null) {
+      stateFromLocalStorage.finalCardToShare = {};
     stateFromLocalStorage.generateCardClicked = false;
+    }
+    
     this.fileInput = React.createRef();
     if(stateFromLocalStorage == null) {
       this.state = {
